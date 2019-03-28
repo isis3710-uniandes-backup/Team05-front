@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import BioAndes from './views/BioAndes';
-import Clases from './views/Clases';
-import Nosotros from './views/Nosotros';
-import Contactenos from './views/Contactenos';
+import BioAndes from '../views/BioAndes';
+import Clases from '../views/Clases';
+import Nosotros from '../views/Nosotros';
+import Contactenos from '../views/Contactenos';
 
 export default class Routes extends React.Component {
   render() {
