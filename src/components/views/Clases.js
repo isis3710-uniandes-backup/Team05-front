@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class Colecciones extends React.Component {
+export default class Clases extends React.Component {
   render() {
     return (
       <div>
-        Colecciones
+        Clases
       </div>
     );
   }

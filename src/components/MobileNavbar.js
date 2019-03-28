@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import MenuItems from './MenuItems';
 import './MobileNavbar.css';
 
 export default class MobileMenu extends React.Component {
@@ -34,20 +35,7 @@ export default class MobileMenu extends React.Component {
         <div id='navbar-mobile-slide'
             onMouseDown={this.handleMouseDown}
             className={this.state.visible ? 'navbar-mobile-show' : 'navbar-mobile-hide'}>
-          <ul className='navbar-items'>
-              <li className='navbar-item'>
-                <NavLink exact to='/'>Inicio</NavLink>
-              </li>
-              <li className='navbar-item'>
-                <NavLink exact to='/colecciones'>Colecciones</NavLink>
-              </li>
-              <li className='navbar-item'>
-                <NavLink exact to='/nosotros'>Nosotros</NavLink>
-              </li>
-              <li className='navbar-item'>
-                <NavLink exact to='/contactenos'>Contáctenos</NavLink>
-              </li>
-            </ul>
+          <MenuItems />
         </div>
       </div>
     );
