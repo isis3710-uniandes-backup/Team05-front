@@ -6,9 +6,16 @@ import './App.css';
 export default class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Navbar />
-        <Routes />
+      <div className='app'>
+        <div className='header'>
+          <Navbar />
+        </div>
+        <div className='content'>
+          <Routes />
+        </div>
+        <div className='footer'>
+          <p>© 2019 BioAndes</p>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
 import BioAndes from './views/BioAndes';
 import Colecciones from './views/Colecciones';
 import Nosotros from './views/Nosotros';

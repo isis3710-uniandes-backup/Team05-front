@@ -1,7 +1,57 @@
+/* General html settings */
 html {
   box-sizing: border-box;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
+}
+
+html, body {
+  font-family: 'Lato';
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables */
+:root {
+  --primary: #00cc00;
+  --page-grid: auto minmax(0px, 1000px) auto;
+}
+
+#root {
+  height: 100%;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: var(--page-grid);
+  grid-template-rows: minmax(min-content, max-content) auto minmax(min-content, max-content);
+  height: 100%;
+}
+
+.header {
+  grid-column: 1 / -1;
+  height: auto;
+}
+
+.content {
+  grid-column: 2;
+  height: 100%;
+}
+
+.footer {
+  align-items: center;
+  background-color: var(--primary);
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: var(--page-grid);
+  height: 100%;
+}
+
+.footer p {
+  color: white;
+  grid-column: 2;
+  margin-left: 20px;
 }
