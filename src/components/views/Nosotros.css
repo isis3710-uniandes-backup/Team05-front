@@ -1,0 +1,37 @@
+.main{
+    margin: 70px 20px;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5%;
+    margin: 50px;
+    align-items: center;
+}
+
+.left{
+    grid-column: 1;
+    grid-row: 1;
+    text-align: justify;
+}
+
+.imgLeft img{
+    grid-column: 1  ;
+    grid-row: 1;
+    max-width: 400px;
+    max-height: 250px;
+}
+
+.imgRight img{
+    grid-column: 2;
+    grid-row: 1;
+    max-width: 400px;
+    max-height: 250px;
+}
+
+.right{
+    grid-column: 2;
+    text-align: justify;
+    grid-row: 1;
+}
