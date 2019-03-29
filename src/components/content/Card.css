@@ -1,0 +1,23 @@
+.card {
+  align-content: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px #00000066;
+  display: grid;
+  justify-items: center;
+  max-width: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+  max-width: 200px;
+}
+
+.card h2 {
+  font-size: 20px;
+}
+
+.card h3 {
+  font-size: 14px;
+}

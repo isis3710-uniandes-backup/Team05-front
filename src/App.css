@@ -20,8 +20,15 @@ html, body {
   --page-grid: auto minmax(0px, 1000px) auto;
 }
 
+/* CSS */
 #root {
   height: 100%;
+}
+
+h1 {
+  font-size: 80px;
+  text-align: center;
+  margin: 20px;
 }
 
 .app {
