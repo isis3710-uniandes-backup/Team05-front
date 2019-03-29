@@ -27,4 +27,4 @@ npm install
 ~~~
 npm start
 ~~~
-## P.D. para tener una conección a la base de no es necesario correr el backend puesto que este ya se encuentra corriendo en HEROKU. Este puede tardar unos segundos en responder por primera vez a las peticiones.
+#### P.D. para tener una conección a la base de no es necesario correr el backend puesto que este ya se encuentra corriendo en HEROKU. Este puede tardar unos segundos en responder por primera vez a las peticiones.
