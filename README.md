@@ -23,7 +23,11 @@ cd Team05-front/
 ~~~
 npm install
 ~~~
-### 5. correr el servidor
+### 5. instalar query-string
+~~~
+npm install query-string
+~~~
+### 6. correr el servidor
 ~~~
 npm start
 ~~~
