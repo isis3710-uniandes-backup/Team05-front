@@ -7,7 +7,7 @@ export default class Clase extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clase: 'Loading...',
+      clase: 'Cargando...',
       especimenes: []
     };
   }

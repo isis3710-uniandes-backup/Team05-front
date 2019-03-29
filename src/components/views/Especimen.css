@@ -1,0 +1,16 @@
+.especimen-wrapper {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.especimen-wrapper img {
+  box-shadow: 0 10px 10px #00000055;
+  max-width: 90%;
+  margin: 0 5%;
+}
+
+.especimen-wrapper p {
+  font-size: 20px;
+  margin: 0 5% 5% 5%;
+}
