@@ -4,9 +4,9 @@ import "./Nosotros.css";
 export default class Nosotros extends React.Component {
   render() {
     return (
-      <div className="main">
-        <div className="wrapper">
-          <div className="left">
+      <div className="nosotros">
+        <div className="nosotros-wrapper">
+          <div className="nosotros-text">
             <h2>Misión</h2>
             <p>
               El Museo de Historia Natural ANDES tiene como propósito ser un
@@ -18,7 +18,7 @@ export default class Nosotros extends React.Component {
               docencia.
             </p>
           </div>
-          <div className="imgRight">
+          <div className="nosotros-img">
             <img
               src="http://delacarreracavanzo.com/wp-content/uploads/2018/04/IMAGENES_EXTERIORES_4-1024x598.jpg"
               alt="bloque M Universidad de los Andes"
@@ -26,8 +26,14 @@ export default class Nosotros extends React.Component {
           </div>
         </div>
         <hr />
-        <div className="wrapper">
-          <div className="right">
+        <div className="nosotros-wrapper">
+          <div className="nosotros-img">
+            <img
+              src="http://repository.humboldt.org.co/bitstream/handle/20.500.11761/102/7376.jpg?sequence=6&isAllowed=y"
+              alt="colección de huevos donada por Marinkelle"
+            />
+          </div>
+          <div className="nosotros-text">
             <h2>Historia</h2>
             <p>
               Las colecciones en el Departamento de Ciencias Biológicas las
@@ -44,16 +50,10 @@ export default class Nosotros extends React.Component {
               Microscópicos y Bacterias.
             </p>
           </div>
-          <div className="imgLeft">
-            <img
-              src="http://repository.humboldt.org.co/bitstream/handle/20.500.11761/102/7376.jpg?sequence=6&isAllowed=y"
-              alt="colección de huevos donada por Marinkelle"
-            />
-          </div>
         </div>
         <hr />
-        <div className="wrapper">
-          <div className="left">
+        <div className="nosotros-wrapper">
+          <div className="nosotros-text">
             <h2>Colecciones</h2>
             <p>
               El museo ANDES comprende colecciones de peces, anfibios, reptiles,
@@ -65,7 +65,7 @@ export default class Nosotros extends React.Component {
               especímenes.
             </p>
           </div>
-          <div className="imgRight">
+          <div className="nosotros-img">
             <img
             src="https://rachelivanyi.com/wp-content/uploads/2013/05/RIvanyi_Comp_animals-940x470.jpg"
               alt="especímenes de colecciones"
