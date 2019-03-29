@@ -1,0 +1,10 @@
+.bioandes-content {
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.bioandes-content img {
+  margin-bottom: 30px;
+  max-width: 800px;
+}
