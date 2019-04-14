@@ -46,12 +46,14 @@ li.navbar-item {
   list-style-type: none;
   margin: 10px;
   padding: 0;
+  position: relative;
 }
 
-.navbar-item a.active {
-  text-decoration: underline;
-}
-
-.navbar-item a:not(.active):hover {
-  text-decoration: underline;
+.navbar-item a:not(.active):hover::before, .navbar-item a.active::before {
+  background-color: #ffffff;
+  content: "";
+  height: 2px;
+  margin-top: 30px;
+  position: absolute;
+  width: 100%;
 }
