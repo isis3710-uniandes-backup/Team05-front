@@ -6,7 +6,7 @@ En la carpeta `ui` se pueden encontrar tanto los mockups como los resultados del
 
 Mediante el uso de este frontend desarrollado en React un usuario tiene la posibilidad de aprender acerca del museo de Historia Natural de los Andes y apreciar algunos de los especímenes encontrados por los estudiantes de la facultad de biología.
 
-Además, este proyecto esta corriendo en [HEROKU](https://secret-tor-17478.herokuapp.com)
+Además, este proyecto esta corriendo en [HEROKU](https://secret-tor-17478.herokuapp.com) y está disponible en [bioandes.cpotdevin.com](http://bioandes.cpotdevin.com)
 
 Para poder correr el proyecto es necesario:
 
