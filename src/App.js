@@ -14,7 +14,7 @@ export default class App extends React.Component {
           <Routes />
         </div>
         <div className='footer'>
-          <p>© 2019 BioAndes</p>
+          <p>Copyright © 2019 BioAndes</p>
         </div>
       </div>
     );
