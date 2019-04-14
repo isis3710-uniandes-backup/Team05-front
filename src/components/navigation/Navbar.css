@@ -49,9 +49,9 @@ li.navbar-item {
 }
 
 .navbar-item a.active {
-  color: #828282;
+  text-decoration: underline;
 }
 
 .navbar-item a:not(.active):hover {
-  color: #BEBEBE;
+  text-decoration: underline;
 }

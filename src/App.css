@@ -1,22 +1,5 @@
-/* General html settings */
-html {
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-html, body {
-  font-family: 'Lato';
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Variables */
 :root {
-  --primary: #00cc00;
+  --primary: #006600;
   --page-grid: auto minmax(0px, 1000px) auto;
 }
 
