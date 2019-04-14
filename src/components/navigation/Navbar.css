@@ -7,31 +7,27 @@ nav.navbar {
 }
 
 .navbar-content {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
   grid-column: 2;
   height: 100%;
 }
 
-.navbar-desktop, .navbar-mobile {
-  align-items: center;
-  display: flex;
-  height: 100%;
-}
-
-@media all and (min-width: 720px) {
-  .navbar-mobile {
-    display: none;
-  }
-}
-
-@media all and (max-width: 720px) {
-  .navbar-desktop {
-    display: none;
-  }
-}
-
-.navbar-desktop .navbar-items {
+.navbar-items {
   display: flex;
   margin-left: auto;
+  padding: 0;
+}
+
+@media all and (max-width: 650px) {
+  .navbar-content {
+    justify-content: center;
+  }
+
+  .navbar-items {
+    margin-left: 0;
+  }
 }
 
 .navbar a {
@@ -45,7 +41,7 @@ h1.navbar-banner {
   margin: auto 20px;
 }
 
-.navbar-desktop li.navbar-item {
+li.navbar-item {
   font-size: 20px;
   list-style-type: none;
   margin: 10px;

@@ -4,7 +4,24 @@
     <meta charset="utf-8" />
     <title>bioAndes</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <meta id="bioandes-viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=1">
+    <script>
+      window.onload = function() {
+        if (screen.width < 450) {
+          setMobileViewPort();
+        }
+      }
+      window.onresize = function() {
+        if (screen.width < 450) {
+          setMobileViewPort();
+        } else {
+          document.getElementById('bioandes-viewport').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=1');
+        }
+      }
+      function setMobileViewPort() {
+        document.getElementById('bioandes-viewport').setAttribute('content', 'width=450');
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
