@@ -27,12 +27,6 @@ export default class Nosotros extends React.Component {
         </div>
         <hr />
         <div className="nosotros-wrapper">
-          <div className="nosotros-img">
-            <img
-              src="http://repository.humboldt.org.co/bitstream/handle/20.500.11761/102/7376.jpg?sequence=6&isAllowed=y"
-              alt="colección de huevos donada por Marinkelle"
-            />
-          </div>
           <div className="nosotros-text">
             <h2>Historia</h2>
             <p>
@@ -49,6 +43,12 @@ export default class Nosotros extends React.Component {
               externos. Recientemente se crearon las colecciones de Hongos
               Microscópicos y Bacterias.
             </p>
+          </div>
+          <div className="nosotros-img">
+            <img
+              src="http://repository.humboldt.org.co/bitstream/handle/20.500.11761/102/7376.jpg?sequence=6&isAllowed=y"
+              alt="colección de huevos donada por Marinkelle"
+            />
           </div>
         </div>
         <hr />
