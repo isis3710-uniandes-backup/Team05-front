@@ -1,5 +1,11 @@
-.bioandes-content {
+.bioandes-view {
+  display: grid;
+  grid-template-columns: var(--page-grid-column);
   height: 100%;
+}
+
+.bioandes-content {
+  grid-column: 2;
   position: relative;
   text-align: center;
 }

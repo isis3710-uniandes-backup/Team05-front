@@ -1,4 +1,11 @@
-.nosotros {
+.nosotros-view {
+  display: grid;
+  grid-template-columns: var(--page-grid-column);
+  height: 100%;
+}
+
+.nosotros-content {
+  grid-column: 2;
   margin: 70px 20px;
 }
 

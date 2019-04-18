@@ -1,9 +1,8 @@
 :root {
   --primary: #006600;
-  --page-grid: auto minmax(0px, 1000px) auto;
+  --page-grid-column: auto minmax(0px, 1000px) auto;
 }
 
-/* CSS */
 #root {
   height: 100%;
 }
@@ -21,18 +20,15 @@ h2 {
 
 .app {
   display: grid;
-  grid-template-columns: var(--page-grid);
   grid-template-rows: minmax(min-content, max-content) auto minmax(min-content, max-content);
   height: 100%;
 }
 
 .header {
-  grid-column: 1 / -1;
   height: auto;
 }
 
 .content {
-  grid-column: 2;
   height: 100%;
 }
 
@@ -40,8 +36,7 @@ h2 {
   align-items: center;
   background-color: var(--primary);
   display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: var(--page-grid);
+  grid-template-columns: var(--page-grid-column);
   height: 100%;
 }
 
