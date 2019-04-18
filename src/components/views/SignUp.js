@@ -1,7 +1,7 @@
 import React from 'react';
-import './SignUp.css';
+import './LoginAndSignup.css';
 
-class SignUp extends React.Component {
+class Signup extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -15,11 +15,13 @@ class SignUp extends React.Component {
 
   handleHideUnhide = (event) => {
     event.preventDefault();
+
     this.setState({ passwordIsHidden: !this.state.passwordIsHidden });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
+    
     const name = event.target.name.value.trim();
     const lastName = event.target['last-name'].value.trim();
     const email = event.target.email.value.trim();
@@ -77,7 +79,7 @@ class SignUp extends React.Component {
     const hideButtonText = this.state.passwordIsHidden ? 'Mostrar' : 'Esconder';
     
     return (
-      <div className='sign-up'>
+      <div className='log-in-and-sign-up'>
         <div className='form-card'>
           <h1>Regístrate</h1>
           <form onSubmit={this.handleSubmit}>
@@ -90,7 +92,7 @@ class SignUp extends React.Component {
             <p>{this.state.lastNameError}</p>
 
             <label>Correo Uniandes:</label>
-            <input type='text' name='email' placeholder='jdoe@example.com' />
+            <input type='text' name='email' placeholder='jdoe@uniandes.edu.co' />
             <p>{this.state.emailError}</p>
 
             <div className='sign-up-password'>
@@ -108,4 +110,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+export default Signup;
