@@ -1,0 +1,100 @@
+.sign-up {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/jungle-background.jpg?alt=media&token=fc1f2e34-fd90-4a76-bc95-21eefa42518a');
+  background-size: cover;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+}
+
+.form-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: min-content;
+  margin-top: 70px;
+  max-width: 500px;
+}
+
+.form-card h1 {
+  font-size: 60px;
+  margin: 10px 0;
+}
+
+.form-card form {
+  margin: 0 50px 15px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.form-card form > input {
+  border: 1px solid #999999;
+  border-radius: 5px;
+  font-size: 15px;
+  height: 30px;
+  padding-left: 10px;
+  width: 300px;
+}
+
+.form-card form > input:focus {
+  border: 2px solid var(--primary-light);
+  outline: 0;
+  padding-left: 9px;
+}
+
+.form-card p {
+  color: #FF3322;
+  font-size: 12px;
+  margin: 0 0 10px 10px;
+}
+
+.form-card input[type="submit"] {
+  align-self: center;
+  background-image: linear-gradient(-180deg, var(--primary-light) 0%, var(--primary) 100%);
+  border: 1px solid var(--primary-dark);
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  height: 50px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.form-card input[type="submit"]:hover {
+  background-image: linear-gradient(-180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  cursor: pointer;
+}
+
+.form-card input[type="submit"]:active {
+  background-image: linear-gradient(-180deg, var(--primary-dark) 0%, var(--primary) 100%);
+}
+
+.form-card input[type="submit"]:focus{
+  outline: 0;
+}
+
+.sign-up-password {
+  display: flex;
+}
+
+.sign-up-password input[type="button"] {
+  align-self: center;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  height: 20px;
+  margin-left: auto;
+  text-decoration: underline;
+}
+
+.sign-up-password input[type="button"]:hover {
+  color: #777777;
+  cursor: pointer;
+}
+
+.sign-up-password input[type="button"]:focus{
+  outline: 0;
+}

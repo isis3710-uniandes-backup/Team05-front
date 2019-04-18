@@ -19,7 +19,7 @@ const Navbar = () => (
           <NavLink exact to='/nosotros'>Nosotros</NavLink>
         </li>
         <li className='navbar-item'>
-          <NavLink exact to='/contactenos'>Contáctenos</NavLink>
+          <NavLink exact to='/signup'>Regístrate</NavLink>
         </li>
       </ul>
     </div>

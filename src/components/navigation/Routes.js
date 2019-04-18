@@ -6,6 +6,7 @@ import Clases from '../views/Clases';
 import Especimen from '../views/Especimen';
 import Nosotros from '../views/Nosotros';
 import Contactenos from '../views/Contactenos';
+import SignUp from '../views/SignUp';
 
 export default class Routes extends React.Component {
   render() {
@@ -17,6 +18,7 @@ export default class Routes extends React.Component {
         <Route exact path='/especimen/:id' component={Especimen} />
         <Route exact path='/nosotros' component={Nosotros} />
         <Route exact path='/contactenos' component={Contactenos} />
+        <Route exact path='/signup' component={SignUp} />
       </Switch>
     );
   }

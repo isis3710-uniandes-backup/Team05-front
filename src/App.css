@@ -1,5 +1,7 @@
 :root {
   --primary: #006600;
+  --primary-light: #008800;
+  --primary-dark: #004400;
   --page-grid-column: auto minmax(0px, 1000px) auto;
 }
 
