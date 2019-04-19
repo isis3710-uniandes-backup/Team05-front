@@ -25,7 +25,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className='log-in-and-sign-up'>
+      <div className='login-and-signup'>
         <div className='form-card'>
           <h1>Iniciar sesión</h1>
           <form onSubmit={this.handleSubmit}>

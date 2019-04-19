@@ -1,4 +1,4 @@
-.log-in-and-sign-up {
+.login-and-signup {
   background-image: url('https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/jungle-background.jpg?alt=media&token=fc1f2e34-fd90-4a76-bc95-21eefa42518a');
   background-size: cover;
   height: 100%;
@@ -76,12 +76,12 @@
   outline: 0;
 }
 
-.sign-up-password {
+.signup-password {
   display: flex;
+  align-items: center;
 }
 
-.sign-up-password input[type="button"] {
-  align-self: center;
+.signup-password input[type="button"] {
   border: none;
   font-weight: 700;
   font-size: 14px;
@@ -90,11 +90,11 @@
   text-decoration: underline;
 }
 
-.sign-up-password input[type="button"]:hover {
+.signup-password input[type="button"]:hover {
   color: #777777;
   cursor: pointer;
 }
 
-.sign-up-password input[type="button"]:focus{
+.signup-password input[type="button"]:focus{
   outline: 0;
 }
