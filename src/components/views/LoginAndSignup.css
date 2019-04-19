@@ -31,7 +31,7 @@
 }
 
 .form-card form > input {
-  border: 1px solid #999999;
+  border: 1px solid var(--grey);
   border-radius: 5px;
   font-size: 15px;
   height: 30px;
@@ -91,7 +91,7 @@
 }
 
 .signup-password input[type="button"]:hover {
-  color: #777777;
+  color: var(--grey);
   cursor: pointer;
 }
 

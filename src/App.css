@@ -2,6 +2,7 @@
   --primary: #006600;
   --primary-light: #008800;
   --primary-dark: #004400;
+  --grey: #888888;
   --page-grid-column: auto minmax(0px, 1000px) auto;
 }
 
