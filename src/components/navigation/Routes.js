@@ -5,7 +5,6 @@ import Clase from '../views/Clase';
 import Clases from '../views/Clases';
 import Especimen from '../views/Especimen';
 import Nosotros from '../views/Nosotros';
-import Contactenos from '../views/Contactenos';
 import Login from '../views/Login';
 import Signup from '../views/Signup';
 
@@ -18,7 +17,6 @@ export default class Routes extends React.Component {
         <Route exact path='/clase' component={Clase} />
         <Route exact path='/especimen/:id' component={Especimen} />
         <Route exact path='/nosotros' component={Nosotros} />
-        <Route exact path='/contactenos' component={Contactenos} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
       </Switch>
