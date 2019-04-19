@@ -57,6 +57,7 @@
   border: 1px solid var(--primary-dark);
   border-radius: 5px;
   color: #ffffff;
+  cursor: pointer;
   font-size: 20px;
   height: 50px;
   margin-top: 10px;
@@ -65,7 +66,6 @@
 
 .form-card input[type="submit"]:hover {
   background-image: linear-gradient(-180deg, var(--primary) 0%, var(--primary-dark) 100%);
-  cursor: pointer;
 }
 
 .form-card input[type="submit"]:active {

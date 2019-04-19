@@ -79,7 +79,7 @@ class Signup extends React.Component {
     const hideButtonText = this.state.passwordIsHidden ? 'Mostrar' : 'Esconder';
     
     return (
-      <div className='log-in-and-sign-up'>
+      <div className='login-and-signup'>
         <div className='form-card'>
           <h1>Regístrate</h1>
           <form onSubmit={this.handleSubmit}>
@@ -95,7 +95,7 @@ class Signup extends React.Component {
             <input type='text' name='email' placeholder='jdoe@uniandes.edu.co' />
             <p>{this.state.emailError}</p>
 
-            <div className='sign-up-password'>
+            <div className='signup-password'>
               <label>Clave:</label>
               <input className='hide-unhide' type='button' onClick={this.handleHideUnhide} value={hideButtonText} />
             </div>
