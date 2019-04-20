@@ -62,7 +62,7 @@ class SearchBar extends React.Component {
 
         <div className='searchbar-separator' />
 
-        <input type='search' name='value' list='search-options' />
+        <input type='search' name='value' list='search-options' autoComplete='off' />
 
         <datalist id='search-options'>
           {datalist}
