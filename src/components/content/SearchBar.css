@@ -53,7 +53,8 @@ form.searchbar {
   cursor: pointer;
   font-size: 15px;
   height: 40px;
-  margin-right: 5px; 
+  margin-right: 5px;
+  padding: 0;
   width: 150px;
 }
 
