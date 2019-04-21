@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import './LoginAndSignup.css';
 
 class Signup extends React.Component {
@@ -9,7 +10,8 @@ class Signup extends React.Component {
       nameError: '',
       lastNameError: '',
       emailError: '',
-      passwordError: ''
+      passwordError: '',
+      redirect: false
     }
   }
 
@@ -29,6 +31,7 @@ class Signup extends React.Component {
 
     if (this.checkNewUserData(name, lastName, email, password)) {
       console.log(name + " " + lastName + " " + email + " " + password);
+      this.setState({ redirect: true });
     }
   }
 
@@ -75,6 +78,10 @@ class Signup extends React.Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to='/signup-confirmation' />
+    }
+
     const password = this.state.passwordIsHidden ? 'password' : 'test';
     const hideButtonText = this.state.passwordIsHidden ? 'Mostrar' : 'Esconder';
     

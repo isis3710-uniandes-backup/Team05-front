@@ -19,8 +19,17 @@
   margin: 10px 0;
 }
 
+.form-card h2 {
+  margin-bottom: 10px;
+}
+
+.form-card h3 {
+  text-align: center;
+  margin: 0 30px 30px;
+}
+
 .form-card form {
-  margin: 0 50px 15px 50px;
+  margin: 0 50px 15px;
   display: flex;
   flex-direction: column;
 }
@@ -98,4 +107,25 @@
 
 .signup-password input[type="button"]:focus{
   outline: 0;
+}
+
+.checkmark-wrapper {
+  width: 150px;
+  margin: 60px auto 40px;
+}
+
+.checkmark {
+  stroke: var(--primary-light);
+  stroke-dashoffset: 745.74853515625;
+  stroke-dasharray: 745.74853515625;
+  animation: dash 2s ease-out forwards;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
