@@ -122,10 +122,10 @@ class Signup extends React.Component {
   handleSubmit = async (event) => {
     event.preventDefault();
 
-    const name = event.target.name.value.trim();
-    const lastName = event.target['last-name'].value.trim();
-    const email = event.target.email.value.trim();
-    const password = event.target.password.value;
+    const name = this.state.name.trim();
+    const lastName = this.state.lastName.trim();
+    const email = this.state.email.trim();
+    const password = this.state.password.value;
 
     if (this.isNewUserDataOk()) {
       this.setState({ addingUser: true });
