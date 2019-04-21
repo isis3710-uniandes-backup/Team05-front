@@ -1,6 +1,7 @@
 form.searchbar {
   align-items: center;
-  background-color: #ffffff;
+  background-color: white;
+  border: 1px solid var(--grey);
   border-radius: 25px;
   display: flex;
   height: 50px;

@@ -15,6 +15,12 @@
   color: var(--error);
 }
 
+.fill-area {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
 h1 {
   font-size: 80px;
   text-align: center;

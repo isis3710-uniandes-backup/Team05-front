@@ -1,11 +1,14 @@
 import React from 'react';
+import '../content/Loading';
 import './Especimen.css';
+import Loading from '../content/Loading';
 
 export default class Especimen extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      especie: 'Cargando...'
+      especie: null,
+      especimen: null
     }
   }
 
@@ -20,7 +23,7 @@ export default class Especimen extends React.Component {
   }
 
   render() {
-    let especimen = <div></div>;
+    let especimen = null;
     if (this.state.especimen) {
       especimen = (
         <div className='especimen-wrapper'>
@@ -36,10 +39,12 @@ export default class Especimen extends React.Component {
           </ul>
         </div>
       );
+    } else {
+      especimen = <Loading />;
     }
 
     return (
-      <div>
+      <div className='fill-area'>
         <h1>{this.state.especie}</h1>
         {especimen}
       </div>

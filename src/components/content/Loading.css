@@ -1,5 +1,13 @@
+.loading-container {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  margin: auto;
+}
+
 .loading-wrapper {
-  margin: 60px auto;
+  height: 53px;
+  margin: 40px;
   width: 40px;
 }
 
