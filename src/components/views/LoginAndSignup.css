@@ -83,6 +83,7 @@
 
 .signup-password input[type="button"] {
   border: none;
+  background-color: white;
   font-weight: 700;
   font-size: 14px;
   height: 20px;
