@@ -46,8 +46,6 @@ class Home extends React.Component {
         </div>
         <div className='bioandes-search-content'>
           <div className='bioandes-search-results'>
-            {/* <h2>Aquí puede encontrar los especímenes que hemos encontrado en el departamento de biología de la Universidad de los Andes </h2>
-            <img alt='Dos guacamayas posadas en una rama' src='https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/front.png?alt=media&token=c41e283f-89d6-4d8a-b8d1-07819e2d791c' /> */}
             <SearchResults queryKey={this.state.key} value={this.state.value} results={this.state.searchResults} />
           </div>
         </div>

@@ -12,9 +12,9 @@ class SearchResults extends React.Component {
     let title = '';
     if (this.props.value !== '') {
       const queryKey = this.props.queryKey.charAt(0).toUpperCase() + this.props.queryKey.slice(1);
-      title = <h3>Resultados con <ins>{queryKey} = {this.props.value}</ins></h3>;
+      title = <h2>Resultados con <ins>{queryKey} = {this.props.value}</ins></h2>;
     } else {
-      title = <h3>Resultados:</h3>;
+      title = <h2>Resultados:</h2>;
     }
 
     let results = (
