@@ -125,7 +125,7 @@ class Signup extends React.Component {
     const name = this.state.name.trim();
     const lastName = this.state.lastName.trim();
     const email = this.state.email.trim();
-    const password = this.state.password.value;
+    const password = this.state.password;
 
     if (this.isNewUserDataOk()) {
       this.setState({ addingUser: true });

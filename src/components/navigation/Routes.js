@@ -8,6 +8,7 @@ import Nosotros from '../views/Nosotros';
 import Login from '../views/Login';
 import Signup from '../views/Signup';
 import SignupConfirmation from '../views/SignupConfirmation';
+import Logout from '../views/Logout';
 import NotFound from '../views/NotFound';
 
 export default class Routes extends React.Component {
@@ -22,6 +23,7 @@ export default class Routes extends React.Component {
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/signup-confirmation' component={SignupConfirmation} />
+        <Route exact path='/logout' component={Logout} />
         <Route path='/' component={NotFound} />
       </Switch>
     );
