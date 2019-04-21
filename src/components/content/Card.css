@@ -1,6 +1,6 @@
 .card {
   border: 1px solid #888888;
-  border-radius: 10px;
+  border-radius: 3px;
   box-shadow: 0 10px 10px #00000066;
   cursor: pointer;
   display: grid;
@@ -19,7 +19,7 @@
 .card div {
   background-position: center center;
   background-size: cover;
-  border-radius: 10px 10px 0 0; 
+  border-radius: 3px 3px 0 0;
   width: 100%;
 }
 
