@@ -60,6 +60,7 @@ h2 {
 
 .footer p {
   color: white;
+  font-size: 12px;
   grid-column: 2;
-  margin-left: 20px;
+  margin: 8px 20px;
 }
