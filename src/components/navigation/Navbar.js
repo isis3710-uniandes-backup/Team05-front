@@ -30,6 +30,9 @@ class Navbar extends React.Component {
             <NavLink exact to='/'>Inicio</NavLink>
           </li>
           <li className='navbar-item'>
+            <NavLink exact to='/especimen/record-new'>Añadir</NavLink>
+          </li>
+          <li className='navbar-item'>
             <NavLink exact to='/nosotros'>Nosotros</NavLink>
           </li>
           <li className='navbar-item'>

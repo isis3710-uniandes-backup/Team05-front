@@ -4,6 +4,7 @@ import BioAndes from '../views/BioAndes';
 import Clase from '../views/Clase';
 import Clases from '../views/Clases';
 import Especimen from '../views/Especimen';
+import RecordNew from '../views/RecordNew';
 import Nosotros from '../views/Nosotros';
 import Login from '../views/Login';
 import Signup from '../views/Signup';
@@ -18,6 +19,7 @@ export default class Routes extends React.Component {
         <Route exact path='/' component={BioAndes} />
         <Route exact path='/clases' component={Clases} />
         <Route exact path='/clase' component={Clase} />
+        <Route exact path='/especimen/record-new' component={RecordNew} />
         <Route exact path='/especimen/:id' component={Especimen} />
         <Route exact path='/nosotros' component={Nosotros} />
         <Route exact path='/login' component={Login} />
