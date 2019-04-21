@@ -1,0 +1,10 @@
+.input-feedback .empty-input-feedback {
+  height: 15px;
+  width: 10px;
+}
+
+.input-feedback p {
+  font-size: 12px;
+  height: 15px;
+  margin: 0 0 0 10px;
+}
