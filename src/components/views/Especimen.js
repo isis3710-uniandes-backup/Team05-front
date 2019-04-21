@@ -25,13 +25,15 @@ export default class Especimen extends React.Component {
       especimen = (
         <div className='especimen-wrapper'>
           <img src={this.state.especimen.imagen} alt={this.state.especie} />
-          <div className='especimen-info'>
-            <p>Reino: {this.state.especimen.reino}</p>
-            <p>Clase: {this.state.especimen.clase}</p>
-            <p>Orden: {this.state.especimen.orden}</p>
-            <p>Familia: {this.state.especimen.familia}</p>
-            <p>Género: {this.state.especimen.genero}</p>
-          </div>
+          <ul className='especimen-info'>
+            <li>Dominio: {this.state.especimen.dominio}</li>
+            <li>Reino: {this.state.especimen.reino}</li>
+            <li>Filo: {this.state.especimen.filo}</li>
+            <li>Clase: {this.state.especimen.clase}</li>
+            <li>Orden: {this.state.especimen.orden}</li>
+            <li>Familia: {this.state.especimen.familia}</li>
+            <li>Género: {this.state.especimen.genero}</li>
+          </ul>
         </div>
       );
     }
