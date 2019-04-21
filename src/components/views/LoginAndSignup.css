@@ -1,4 +1,5 @@
 .login-and-signup {
+  align-content: center;  
   background-image: url('https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/jungle-background.jpg?alt=media&token=fc1f2e34-fd90-4a76-bc95-21eefa42518a');
   background-size: cover;
   height: 100%;
@@ -10,7 +11,7 @@
   background-color: #ffffff;
   border-radius: 10px;
   height: min-content;
-  margin-top: 70px;
+  margin: 80px 0;
   max-width: 500px;
   width: 400px;
 }
@@ -21,7 +22,7 @@
 }
 
 .form-card h2 {
-  margin: 10px 30px 20px;
+  margin: 10px 30px 10px;
 }
 
 .form-card h3 {
@@ -37,7 +38,7 @@
 
 .form-card label {
   font-size: 20px;
-  margin-bottom: 5px;
+  margin: 10px 0 5px;
 }
 
 .form-card form > input {
@@ -46,6 +47,7 @@
   font-size: 15px;
   height: 30px;
   padding-left: 10px;
+  margin-bottom: 2px;
   width: 300px;
 }
 
@@ -56,9 +58,8 @@
 }
 
 .form-card p {
-  color: var(--error);
   font-size: 12px;
-  margin: 0 0 10px 10px;
+  margin: 0 0 0 10px;
 }
 
 .form-card input[type="submit"] {
@@ -83,6 +84,7 @@
 }
 
 .form-card input[type="submit"]:focus{
+  border: 1px solid var(--primary-dark);
   outline: 0;
 }
 
@@ -104,10 +106,6 @@
 .signup-password input[type="button"]:hover {
   color: var(--grey);
   cursor: pointer;
-}
-
-.signup-password input[type="button"]:focus{
-  outline: 0;
 }
 
 .checkmark-wrapper {

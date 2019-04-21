@@ -8,11 +8,81 @@ class Signup extends React.Component {
     this.state = {
       passwordIsHidden: true,
       nameError: '',
+      nameOk: false,
       lastNameError: '',
+      lastNameOk: false,
       emailError: '',
+      emailOk: false,
       passwordError: '',
+      passwordOk: false,
       redirect: false
     }
+  }
+
+  handleNameChange = (event) => {
+    const name = event.target.value;
+    let nameError = '';
+    let nameOk = '';
+    if (name === '') {
+      nameError = 'Por favor introduzca su nombre.';
+    } else {
+      nameOk = 'OK';
+    }
+    this.setState({ 
+      nameError: nameError,
+      nameOk: nameOk
+    });
+  }
+
+  handleLastNameChange = (event) => {
+    const lastName = event.target.value;
+    let lastNameError = '';
+    let lastNameOk = '';
+    if (lastName === '') {
+      lastNameError = 'Por favor introduzca su appellido.';
+    } else {
+      lastNameOk = 'OK';
+    }
+    this.setState({ 
+      lastNameError: lastNameError,
+      lastNameOk: lastNameOk
+    });
+  }
+
+  handleEmailChange = (event) => {
+    const email = event.target.value;
+    let emailError = '';
+    let emailOk = '';
+    if (email === '') {
+      emailError = 'Por favor introduzca su correo Uniandes.';
+    } else if (!email.endsWith('@uniandes.edu.co')) {
+      emailError = 'Debe utilizar un correo Uniandes.';
+    } else if (email.length < '@uniandes.edu.co'.length + 1) {
+      emailError = 'Debe utilizar un correo Uniandes válido.';
+    } else {
+      emailOk = 'OK';
+    }
+    this.setState({ 
+      emailError: emailError,
+      emailOk: emailOk
+    });
+  }
+
+  handlePasswordChange = (event) => {
+    const password = event.target.value;
+    let passwordError = '';
+    let passwordOk = '';
+    if (password === '') {
+      passwordError = 'Por favor introduzca una clave.';
+    } else if (password.length < 6) {
+      passwordError = 'Su clave debe tener más de 6 caracteres.';
+    } else {
+      passwordOk = 'OK';
+    }
+    this.setState({ 
+      passwordError: passwordError,
+      passwordOk: passwordOk
+    });
   }
 
   handleHideUnhide = (event) => {
@@ -36,45 +106,31 @@ class Signup extends React.Component {
   }
 
   checkNewUserData = (name, lastName, email, password) => {
-    let nameError = '';
-    let lastNameError = '';
-    let emailError = '';
-    let passwordError = '';
+    let dataIsOk = true;
 
     if (name === '') {
-      nameError = 'Por favor introduzca su nombre.';
+      dataIsOk = false;
     }
 
     if (lastName === '') {
-      lastNameError = 'Por favor introduzca su appellido.';
+      dataIsOk = false;
     }
 
     if (email === '') {
-      emailError = 'Por favor introduzca su correo Uniandes.';
+      dataIsOk = false;
     } else if (!email.endsWith('@uniandes.edu.co')) {
-      emailError = 'Debe utilizar un correo Uniandes.';
+      dataIsOk = false;
     } else if (email.length < '@uniandes.edu.co'.length + 1) {
-      emailError = 'Debe utilizar un correo Uniandes válido.';
+      dataIsOk = false;
     }
 
     if (password === '') {
-      passwordError = 'Por favor introduzca una clave.';
+      dataIsOk = false;
     } else if (password.length < 6) {
-      passwordError = 'Su clave debe tener más de 6 caracteres.';
+      dataIsOk = false;
     }
 
-    this.setState({
-      nameError: nameError,
-      lastNameError: lastNameError,
-      emailError: emailError,
-      passwordError: passwordError
-    });
-
-    if (nameError === '' && lastNameError === '' && emailError === '' && passwordError === '') {
-      return true;
-    } else {
-      return false;
-    }
+    return dataIsOk;
   }
 
   render() {
@@ -91,23 +147,27 @@ class Signup extends React.Component {
           <h1>Regístrate</h1>
           <form onSubmit={this.handleSubmit}>
             <label>Nombre:</label>
-            <input type='text' name='name' placeholder='John/Jane' />
-            <p>{this.state.nameError}</p>
+            <input type='text' name='name' placeholder='John/Jane' onChange={this.handleNameChange} />
+            <p className='ok'>{this.state.nameOk}</p>
+            <p className='error'>{this.state.nameError}</p>
 
             <label>Apellido:</label>
-            <input type='text' name='last-name' placeholder='Doe' />
-            <p>{this.state.lastNameError}</p>
+            <input type='text' name='last-name' placeholder='Doe' onChange={this.handleLastNameChange} />
+            <p className='ok'>{this.state.lastNameOk}</p>
+            <p className='error'>{this.state.lastNameError}</p>
 
             <label>Correo Uniandes:</label>
-            <input type='text' name='email' placeholder='jdoe@uniandes.edu.co' />
-            <p>{this.state.emailError}</p>
+            <input type='text' name='email' placeholder='jdoe@uniandes.edu.co' onChange={this.handleEmailChange} />
+            <p className='ok'>{this.state.emailOk}</p>
+            <p className='error'>{this.state.emailError}</p>
 
             <div className='signup-password'>
               <label>Clave:</label>
               <input className='hide-unhide' type='button' onClick={this.handleHideUnhide} value={hideButtonText} />
             </div>
-            <input type={password} name='password' />
-            <p>{this.state.passwordError}</p>
+            <input type={password} name='password' onChange={this.handlePasswordChange} />
+            <p className='ok'>{this.state.passwordOk}</p>
+            <p className='error'>{this.state.passwordError}</p>
             
             <input type='submit' value='Registrarme' />
           </form>

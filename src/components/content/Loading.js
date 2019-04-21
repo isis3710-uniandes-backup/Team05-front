@@ -5,7 +5,7 @@ const Loading = () => (
   <div className='loading-container'>
     <div className='loading-wrapper'>
       <svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xlink='http://www.w3.org/1999/xlink'
-        x='0px' y='0px' viewBox='0 0 24 30' enable-background='new 0 0 50 50' space='preserve'>
+        x='0px' y='0px' viewBox='0 0 24 30' enableBackground='new 0 0 50 50' space='preserve'>
         <rect x='0' y='13' width='4' height='5' fill='#333'>
           <animate attributeName='height' attributeType='XML'
             values='5;21;5' 

@@ -11,6 +11,10 @@
   height: 100%;
 }
 
+.ok {
+  color: var(--primary-light);
+}
+
 .error {
   color: var(--error);
 }
