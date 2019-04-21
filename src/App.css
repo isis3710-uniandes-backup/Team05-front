@@ -2,12 +2,17 @@
   --primary: #006600;
   --primary-light: #008800;
   --primary-dark: #004400;
+  --error: #FF3322;
   --grey: #888888;
   --page-grid-column: auto minmax(0px, 1000px) auto;
 }
 
 #root {
   height: 100%;
+}
+
+.error {
+  color: var(--error);
 }
 
 h1 {

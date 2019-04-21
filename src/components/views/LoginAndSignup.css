@@ -12,6 +12,7 @@
   height: min-content;
   margin-top: 70px;
   max-width: 500px;
+  width: 400px;
 }
 
 .form-card h1 {
@@ -55,7 +56,7 @@
 }
 
 .form-card p {
-  color: #FF3322;
+  color: var(--error);
   font-size: 12px;
   margin: 0 0 10px 10px;
 }

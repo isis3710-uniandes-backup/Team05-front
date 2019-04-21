@@ -1,5 +1,6 @@
 import React from 'react';
 import EspecimenCard from './EspecimenCard';
+import Loading from './Loading';
 
 class SearchResults extends React.Component {
   getEspecimenCard = (especimen) => {
@@ -18,14 +19,18 @@ class SearchResults extends React.Component {
     }
 
     let results = (
-      <h3>Buscando...</h3>
+      <Loading />
     );
     if (this.props.results) {
       if (0 < this.props.results.length) {
-        results = this.props.results.map(this.getEspecimenCard);
+        results = (
+          <div className='card-view'>
+            {this.props.results.map(this.getEspecimenCard)}
+          </div>
+        );
       } else {
         results = (
-          <h3>No se encontraron especimenes.</h3>
+          <h3 className='error'>No se encontraron especimenes.</h3>
         );
       }
     }
@@ -33,9 +38,7 @@ class SearchResults extends React.Component {
     return (
       <div>
         {title}
-        <div className='card-view'>
-          {results}
-        </div>
+        {results}
       </div>
     );
   }

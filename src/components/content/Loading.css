@@ -1,0 +1,8 @@
+.loading-wrapper {
+  margin: 60px auto;
+  width: 40px;
+}
+
+.loading-wrapper svg rect {
+  fill: var(--primary-light);
+}
