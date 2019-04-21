@@ -1,5 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import base from '../../base';
+import Loading from '../content/Loading';
 import './LoginAndSignup.css';
 
 class Signup extends React.Component {
@@ -15,6 +17,7 @@ class Signup extends React.Component {
       emailOk: false,
       passwordError: '',
       passwordOk: false,
+      addingUser: false,
       redirect: false
     }
   }
@@ -28,7 +31,7 @@ class Signup extends React.Component {
     } else {
       nameOk = 'OK';
     }
-    this.setState({ 
+    this.setState({
       nameError: nameError,
       nameOk: nameOk
     });
@@ -43,7 +46,7 @@ class Signup extends React.Component {
     } else {
       lastNameOk = 'OK';
     }
-    this.setState({ 
+    this.setState({
       lastNameError: lastNameError,
       lastNameOk: lastNameOk
     });
@@ -62,7 +65,7 @@ class Signup extends React.Component {
     } else {
       emailOk = 'OK';
     }
-    this.setState({ 
+    this.setState({
       emailError: emailError,
       emailOk: emailOk
     });
@@ -79,7 +82,7 @@ class Signup extends React.Component {
     } else {
       passwordOk = 'OK';
     }
-    this.setState({ 
+    this.setState({
       passwordError: passwordError,
       passwordOk: passwordOk
     });
@@ -91,17 +94,35 @@ class Signup extends React.Component {
     this.setState({ passwordIsHidden: !this.state.passwordIsHidden });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     const name = event.target.name.value.trim();
     const lastName = event.target['last-name'].value.trim();
     const email = event.target.email.value.trim();
     const password = event.target.password.value;
 
     if (this.checkNewUserData(name, lastName, email, password)) {
-      console.log(name + " " + lastName + " " + email + " " + password);
-      this.setState({ redirect: true });
+      this.setState({ addingUser: true });
+      try {
+        const { user } = await base.auth().createUserWithEmailAndPassword(email, password);
+        await user.updateProfile({ displayName: `${name} ${lastName}` });
+        await user.sendEmailVerification();
+        this.setState({ redirect: true });
+      } catch (error) {
+        console.log(error);
+        let emailError = '';
+        let emailOk = 'Ok';
+        if (error.code === 'auth/email-already-in-use') {
+          emailError = 'Este correo ya se encuentra registrado.';
+          emailOk = '';
+        }
+        this.setState({
+          emailError: emailError,
+          emailOk: emailOk,
+          addingUser: false
+        });
+      }
     }
   }
 
@@ -136,11 +157,20 @@ class Signup extends React.Component {
   render() {
     if (this.state.redirect) {
       return <Redirect to='/signup-confirmation' />
+    } else if (this.state.addingUser) {
+      return (
+        <div className='login-and-signup'>
+          <div className='form-card'>
+            <h1>Registrando</h1>
+            <Loading />
+          </div>
+        </div>
+      );
     }
 
     const password = this.state.passwordIsHidden ? 'password' : 'test';
     const hideButtonText = this.state.passwordIsHidden ? 'Mostrar' : 'Esconder';
-    
+
     return (
       <div className='login-and-signup'>
         <div className='form-card'>
@@ -168,7 +198,7 @@ class Signup extends React.Component {
             <input type={password} name='password' onChange={this.handlePasswordChange} />
             <p className='ok'>{this.state.passwordOk}</p>
             <p className='error'>{this.state.passwordError}</p>
-            
+
             <input type='submit' value='Registrarme' />
           </form>
         </div>
