@@ -12,7 +12,7 @@ const SignupConfirmation = () =>(
         </svg>
       </div>
       <h2>Listo!</h2>
-      <h3>Te hemos enviado un correo de confiramción, por favor revisalo para poder agregar especímenes.</h3>
+      <h3>Te hemos enviado un correo de confirmación, por favor revisalo para poder agregar especímenes.</h3>
     </div>
   </div>
 );
