@@ -4,7 +4,7 @@ import base from "../../base";
 import Loading from "../content/Loading";
 import InputFeedback from "../content/InputFeedback";
 import "./LoginAndSignup.css";
-import { FormattedMessage, FormattedTime } from "react-intl";
+import { FormattedMessage } from "react-intl";
 
 class Signup extends React.Component {
   constructor() {
@@ -216,7 +216,7 @@ class Signup extends React.Component {
 
     const password = this.state.passwordIsHidden ? "password" : "test";
     const hideButtonText = this.state.passwordIsHidden ? "Mostrar" : "Esconder";
-    
+
 
     return (
       <div className="login-and-signup">

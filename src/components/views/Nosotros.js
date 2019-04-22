@@ -1,6 +1,6 @@
 import React from 'react';
 import './Nosotros.css';
-import { formattedMessage, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 export default class Nosotros extends React.Component {
   render() {
@@ -65,7 +65,7 @@ export default class Nosotros extends React.Component {
                 <FormattedMessage id='nosotros.hcolecciones' defaultMessage='Colecciones'/>
                 </h2>
               <p>
-                <FormattedMessage id="nosotros.colecciones" defaultMessage=' 
+                <FormattedMessage id="nosotros.colecciones" defaultMessage='
                 El museo ANDES comprende colecciones de peces, anfibios, reptiles,
                 aves y mamíferos. Además de estas, se están adelantando las
                 colecciones de foraminíferos, polen y arácnidos. La principal
