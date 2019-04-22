@@ -93,7 +93,7 @@ class RecordNew extends React.Component {
         downloadUrl = 'https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/not_available.jpg?alt=media&token=6ecaf067-7490-4943-ba24-68c15b6f45ae';
       }
 
-      const response = await fetch('http://localhost:3001/api/especimenes', {
+      const response = await fetch('http://api.bioandes.cpotdevin.com/api/especimenes', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
