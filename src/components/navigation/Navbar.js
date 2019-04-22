@@ -1,25 +1,36 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
+import "./Navbar.css";
 
 const Navbar = () => (
-  <nav className='navbar'>
-    <div className='navbar-content'>
-      <h1 className='navbar-banner'>
-        <NavLink exact to='/'>bioAndes</NavLink>
+  <nav className="navbar">
+    <div className="navbar-content">
+      <h1 className="navbar-banner">
+        <NavLink exact to="/">
+          bioAndes
+        </NavLink>
       </h1>
-      <ul className='navbar-items'>
-        <li className='navbar-item'>
-          <NavLink exact to='/'>Inicio</NavLink>
+      <ul className="navbar-items">
+        <li className="navbar-item">
+          <NavLink exact to="/">
+            <FormattedMessage id="nav.inicio" defaultMessage="Inicio" />
+          </NavLink>
         </li>
-        <li className='navbar-item'>
-          <NavLink exact to='/nosotros'>Nosotros</NavLink>
+        <li className="navbar-item">
+          <NavLink exact to="/nosotros">
+            <FormattedMessage id="nav.nosotros" defaultMessage="Nosotros" />
+          </NavLink>
         </li>
-        <li className='navbar-item'>
-          <NavLink exact to='/login'>Inicia sesión</NavLink>
+        <li className="navbar-item">
+          <NavLink exact to="/login">
+          <FormattedMessage id="nav.sesion" defaultMessage="Inicia sesión" />
+          </NavLink>
         </li>
-        <li className='navbar-item'>
-          <NavLink exact to='/signup'>Regístrate</NavLink>
+        <li className="navbar-item">
+          <NavLink exact to="/signup">
+            <FormattedMessage id="nav.registrar" defaultMessage="Regístrate"/>
+          </NavLink>
         </li>
       </ul>
     </div>

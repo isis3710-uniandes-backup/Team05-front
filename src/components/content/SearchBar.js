@@ -1,5 +1,6 @@
-import React from 'react';
-import './SearchBar.css';
+import React from "react";
+import "./SearchBar.css";
+import { FormattedMessage } from "react-intl";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -7,68 +8,91 @@ class SearchBar extends React.Component {
     this.state = {
       handleSearch: props.handleSearch,
       datalist: []
-    }
+    };
   }
 
   componentDidMount = async () => {
-    const response = await fetch('http://api.bioandes.cpotdevin.com/api/dominios');
+    const response = await fetch(
+      "http://api.bioandes.cpotdevin.com/api/dominios"
+    );
     const options = await response.json();
 
     this.setState({
       datalist: options.map(item => item.nombre)
     });
-  }
+  };
 
   getDataitem = (item, index) => {
-    return (
-      <option key={index} value={item} />
-    );
-  }
+    return <option key={index} value={item} />;
+  };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
 
     const key = event.target.key.value;
     const value = event.target.value.value;
     this.state.handleSearch(key, value);
-  }
+  };
 
-  handleSelectChange = async (event) => {
-    const parameter = event.target.value === 'orden' ? 'ordenes' : event.target.value + 's';
+  handleSelectChange = async event => {
+    const parameter =
+      event.target.value === "orden" ? "ordenes" : event.target.value + "s";
 
-    const response = await fetch(`http://api.bioandes.cpotdevin.com/api/${parameter}`);
+    const response = await fetch(
+      `http://api.bioandes.cpotdevin.com/api/${parameter}`
+    );
     const options = await response.json();
 
     this.setState({
       datalist: options.map(item => item.nombre)
     });
-  }
+  };
 
   render() {
     const datalist = this.state.datalist.map(this.getDataitem);
 
     return (
-      <form className='searchbar' onSubmit={this.handleSubmit}>
-        <select name='key' onChange={this.handleSelectChange}>
-          <option value='dominio'>Dominio</option>
-          <option value='reino'>Reino</option>
-          <option value='filo'>Filo</option>
-          <option value='clase'>Clase</option>
-          <option value='orden'>Orden</option>
-          <option value='familia'>Familia</option>
-          <option value='genero'>Género</option>
-          <option value='especie'>Especie</option>
+      <form className="searchbar" onSubmit={this.handleSubmit}>
+        <select name="key" onChange={this.handleSelectChange}>
+          <FormattedMessage id="search.dominio" defaultMessage="Dominio">
+            {message => <option value="dominio">{message}</option>}
+          </FormattedMessage>
+          <FormattedMessage id="search.reino" defaultMessage="Reino">
+            {message => <option value="reino">{message}</option>}
+          </FormattedMessage>
+          <FormattedMessage id="search.filo" defaultMessage="Filo">
+            {message => <option value="filo">{message}</option>}
+          </FormattedMessage>
+          <FormattedMessage id="search.clase" defaultMessage="Clase">
+            {message => <option value="clase">{message}</option>}
+          </FormattedMessage>
+          <FormattedMessage id="search.orden" defaultMessage="Orden">
+            {message => <option value="orden">{message}</option>}
+          </FormattedMessage>
+          <FormattedMessage id="search.familia" defaultMessage="Familia">
+            {message => <option value="familia">{message}</option>}
+          </FormattedMessage>
+          <FormattedMessage id="search.genero" defaultMessage="Género">
+            {message => <option value="genero">{message}</option>}
+          </FormattedMessage>
+          <FormattedMessage id="search.especie" defaultMessage="Especie">
+            {message => <option value="especie">{message}</option>}
+          </FormattedMessage>
         </select>
 
-        <div className='searchbar-separator' />
+        <div className="searchbar-separator" />
 
-        <input type='search' name='value' list='search-options' autoComplete='off' />
+        <input
+          type="search"
+          name="value"
+          list="search-options"
+          autoComplete="off"
+        />
 
-        <datalist id='search-options'>
-          {datalist}
-        </datalist>
-
-        <input type='submit' value='Buscar' />
+        <datalist id="search-options">{datalist}</datalist>
+        <FormattedMessage id="search.btn" defaultMessage="Buscar">
+          {val => <input type="submit" value={val} />}
+        </FormattedMessage>
       </form>
     );
   }

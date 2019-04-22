@@ -1,5 +1,6 @@
 import React from 'react';
 import './LoginAndSignup.css';
+import { FormattedMessage } from 'react-intl'; 
 
 const SignupConfirmation = () =>(
   <div className='login-and-signup'>
@@ -11,8 +12,8 @@ const SignupConfirmation = () =>(
             d='M81.7,17.8C73.5,9.3,62,4,49.2,4C24.3,4,4,24.3,4,49.2s20.3,45.2,45.2,45.2s45.2-20.3,45.2-45.2c0-8.6-2.4-16.6-6.5-23.4l0,0L45.6,68.2L24.7,47.3' />
         </svg>
       </div>
-      <h2>Listo!</h2>
-      <h3>Te hemos enviado un correo de confiramción, por favor revisalo para poder agregar especímenes.</h3>
+      <h2><FormattedMessage id='conf.done' defaultMessage='Listo!'/></h2>
+      <h3><FormattedMessage id='conf.mail' defaultMessage='Te hemos enviado un correo de confirmación, por favor revisalo para poder agregar especímenes.'/></h3>
     </div>
   </div>
 );

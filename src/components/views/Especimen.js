@@ -1,7 +1,8 @@
-import React from 'react';
-import '../content/Loading';
-import './Especimen.css';
-import Loading from '../content/Loading';
+import React from "react";
+import "../content/Loading";
+import "./Especimen.css";
+import Loading from "../content/Loading";
+import { FormattedMessage } from "react-intl";
 
 export default class Especimen extends React.Component {
   constructor() {
@@ -9,12 +10,14 @@ export default class Especimen extends React.Component {
     this.state = {
       especie: null,
       especimen: null
-    }
+    };
   }
 
   async componentDidMount() {
     const id = this.props.match.params.id;
-    const request = await fetch(`https://boiling-brushlands-27343.herokuapp.com/api/especimen/${id}`);
+    const request = await fetch(
+      `https://boiling-brushlands-27343.herokuapp.com/api/especimen/${id}`
+    );
     const especimen = await request.json();
     this.setState({
       especie: especimen.especie,
@@ -26,16 +29,43 @@ export default class Especimen extends React.Component {
     let especimen = null;
     if (this.state.especimen) {
       especimen = (
-        <div className='especimen-wrapper'>
+        <div className="especimen-wrapper">
           <img src={this.state.especimen.imagen} alt={this.state.especie} />
-          <ul className='especimen-info'>
-            <li>Dominio: {this.state.especimen.dominio}</li>
-            <li>Reino: {this.state.especimen.reino}</li>
-            <li>Filo: {this.state.especimen.filo}</li>
-            <li>Clase: {this.state.especimen.clase}</li>
-            <li>Orden: {this.state.especimen.orden}</li>
-            <li>Familia: {this.state.especimen.familia}</li>
-            <li>Género: {this.state.especimen.genero}</li>
+          <ul className="especimen-info">
+            <li>
+              <FormattedMessage
+                id="especimen.dominio"
+                defaultMessage="Dominio"
+              />
+              : {this.state.especimen.dominio}
+            </li>
+            <li>
+              <FormattedMessage id="especimen.reino" defaultMessage="Reino" />:{" "}
+              {this.state.especimen.reino}
+            </li>
+            <li>
+              <FormattedMessage id="especimen.filo" defaultMessage="Filo" />:{" "}
+              {this.state.especimen.filo}
+            </li>
+            <li>
+              <FormattedMessage id="especimen.clase" defaultMessage="Clase" /> :{" "}
+              {this.state.especimen.clase}
+            </li>
+            <li>
+              <FormattedMessage id="especimen.orden" defaultMessage="Orden" /> :{" "}
+              {this.state.especimen.orden}
+            </li>
+            <li>
+              <FormattedMessage
+                id="especimen.familia"
+                defaultMessage="Familia"
+              />{" "}
+              : {this.state.especimen.familia}
+            </li>
+            <li>
+              <FormattedMessage id="especimen.genero" defaultMessage="Género" />{" "}
+              : {this.state.especimen.genero}
+            </li>
           </ul>
         </div>
       );
@@ -44,7 +74,7 @@ export default class Especimen extends React.Component {
     }
 
     return (
-      <div className='fill-area'>
+      <div className="fill-area">
         <h1>{this.state.especie}</h1>
         {especimen}
       </div>

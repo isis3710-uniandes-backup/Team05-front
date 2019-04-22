@@ -1,41 +1,47 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import base from '../../base';
-import Loading from '../content/Loading';
-import InputFeedback from '../content/InputFeedback';
-import './LoginAndSignup.css';
+import React from "react";
+import { Redirect } from "react-router-dom";
+import base from "../../base";
+import Loading from "../content/Loading";
+import InputFeedback from "../content/InputFeedback";
+import "./LoginAndSignup.css";
+import { FormattedMessage, FormattedTime } from "react-intl";
 
 class Signup extends React.Component {
   constructor() {
     super();
     this.state = {
       passwordIsHidden: true,
-      name: '',
+      name: "",
       nameOk: false,
-      nameFeedback: '',
-      lastName: '',
+      nameFeedback: "",
+      lastName: "",
       lastNameOk: false,
-      lastNameFeedback: '',
-      email: '',
+      lastNameFeedback: "",
+      email: "",
       emailOk: false,
-      emailFeedback: '',
-      password: '',
+      emailFeedback: "",
+      password: "",
       passwordOk: false,
-      passwordFeedback: '',
+      passwordFeedback: "",
       addingUser: false,
       redirect: false
-    }
+    };
   }
 
   checkName = () => {
-    const name = document.getElementById('signup-name').value;
+    const name = document.getElementById("signup-name").value;
     let nameOk = false;
-    let nameFeedback = '';
-    if (name === '') {
-      nameFeedback = 'Por favor introduzca su nombre.';
+    let nameFeedback = "";
+    if (name === "") {
+      nameFeedback = (
+        <FormattedMessage
+          id="signup.namefdb"
+          defaultMessage="Por favor introduzca su nombre."
+        />
+      );
     } else {
       nameOk = true;
-      nameFeedback = 'OK';
+      nameFeedback = "OK";
     }
 
     this.setState({
@@ -45,17 +51,22 @@ class Signup extends React.Component {
     });
 
     return nameOk;
-  }
+  };
 
   checkLastName = () => {
-    const lastName = document.getElementById('signup-last-name').value;
+    const lastName = document.getElementById("signup-last-name").value;
     let lastNameOk = false;
-    let lastNameFeedback = '';
-    if (lastName === '') {
-      lastNameFeedback = 'Por favor introduzca su appellido.';
+    let lastNameFeedback = "";
+    if (lastName === "") {
+      lastNameFeedback = (
+        <FormattedMessage
+          id="signup.lastnamefdb"
+          defaultMessage="Por favor introduzca su apellido."
+        />
+      );
     } else {
       lastNameOk = true;
-      lastNameFeedback = 'OK';
+      lastNameFeedback = "OK";
     }
 
     this.setState({
@@ -65,21 +76,36 @@ class Signup extends React.Component {
     });
 
     return lastNameOk;
-  }
+  };
 
   checkEmail = () => {
-    const email = document.getElementById('signup-email').value;
+    const email = document.getElementById("signup-email").value;
     let emailOk = false;
-    let emailFeedback = '';
-    if (email === '') {
-      emailFeedback = 'Por favor introduzca su correo Uniandes.';
-    } else if (!email.endsWith('@uniandes.edu.co')) {
-      emailFeedback = 'Debe utilizar un correo Uniandes.';
-    } else if (email.length < '@uniandes.edu.co'.length + 1) {
-      emailFeedback = 'Debe utilizar un correo Uniandes válido.';
+    let emailFeedback = "";
+    if (email === "") {
+      emailFeedback = (
+        <FormattedMessage
+          id="signup.mailfdb"
+          defaultMessage="Por favor introduzca su correo Uniandes."
+        />
+      );
+    } else if (!email.endsWith("@uniandes.edu.co")) {
+      emailFeedback = (
+        <FormattedMessage
+          id="signup.incorrect"
+          defaultMessage="Debe utilizar un correo Uniandes."
+        />
+      );
+    } else if (email.length < "@uniandes.edu.co".length + 1) {
+      emailFeedback = (
+        <FormattedMessage
+          id="signup.invalid"
+          defaultMessage="Debe utilizar un correo Uniandes válido."
+        />
+      );
     } else {
       emailOk = true;
-      emailFeedback = 'OK';
+      emailFeedback = "OK";
     }
 
     this.setState({
@@ -89,19 +115,29 @@ class Signup extends React.Component {
     });
 
     return emailOk;
-  }
+  };
 
   checkPassword = () => {
-    const password = document.getElementById('signup-password').value;
+    const password = document.getElementById("signup-password").value;
     let passwordOk = false;
-    let passwordFeedback = '';
-    if (password === '') {
-      passwordFeedback = 'Por favor introduzca una clave.';
+    let passwordFeedback = "";
+    if (password === "") {
+      passwordFeedback = (
+        <FormattedMessage
+          id="signup.pswdfdb"
+          defaultMessage="Por favor introduzca una clave."
+        />
+      );
     } else if (password.length < 6) {
-      passwordFeedback = 'Su clave debe tener más de 6 caracteres.';
+      passwordFeedback = (
+        <FormattedMessage
+          id="signup.invalidpswd"
+          def="Su clave debe tener más de 6 caracteres."
+        />
+      );
     } else {
       passwordOk = true;
-      passwordFeedback = 'OK';
+      passwordFeedback = "OK";
     }
 
     this.setState({
@@ -111,15 +147,15 @@ class Signup extends React.Component {
     });
 
     return passwordOk;
-  }
+  };
 
-  handleHideUnhide = (event) => {
+  handleHideUnhide = event => {
     event.preventDefault();
 
     this.setState({ passwordIsHidden: !this.state.passwordIsHidden });
-  }
+  };
 
-  handleSubmit = async (event) => {
+  handleSubmit = async event => {
     event.preventDefault();
 
     const name = this.state.name.trim();
@@ -130,15 +166,22 @@ class Signup extends React.Component {
     if (this.isNewUserDataOk()) {
       this.setState({ addingUser: true });
       try {
-        const { user } = await base.auth().createUserWithEmailAndPassword(email, password);
+        const { user } = await base
+          .auth()
+          .createUserWithEmailAndPassword(email, password);
         await user.updateProfile({ displayName: `${name} ${lastName}` });
         await user.sendEmailVerification();
         this.setState({ redirect: true });
       } catch (error) {
         let emailOk = false;
-        let emailFeedback = '';
-        if (error.code === 'auth/email-already-in-use') {
-          emailFeedback = 'Este correo ya se encuentra registrado.';
+        let emailFeedback = "";
+        if (error.code === "auth/email-already-in-use") {
+          emailFeedback = (
+            <FormattedMessage
+              id="signup.inuse"
+              def="Este correo ya se encuentra registrado."
+            />
+          );
         }
         this.setState({
           emailOk: emailOk,
@@ -147,7 +190,7 @@ class Signup extends React.Component {
         });
       }
     }
-  }
+  };
 
   isNewUserDataOk = () => {
     const nameIsOk = this.checkName();
@@ -155,15 +198,15 @@ class Signup extends React.Component {
     const emailIsOk = this.checkEmail();
     const passwordIsOk = this.checkPassword();
     return nameIsOk && lastNameIsOk && emailIsOk && passwordIsOk;
-  }
+  };
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to='/signup-confirmation' />
+      return <Redirect to="/signup-confirmation" />;
     } else if (this.state.addingUser) {
       return (
-        <div className='login-and-signup'>
-          <div className='form-card'>
+        <div className="login-and-signup">
+          <div className="form-card">
             <h1>Registrando</h1>
             <Loading />
           </div>
@@ -171,38 +214,98 @@ class Signup extends React.Component {
       );
     }
 
-    const password = this.state.passwordIsHidden ? 'password' : 'test';
-    const hideButtonText = this.state.passwordIsHidden ? 'Mostrar' : 'Esconder';
+    const password = this.state.passwordIsHidden ? "password" : "test";
+    const hideButtonText = this.state.passwordIsHidden ? "Mostrar" : "Esconder";
+    
 
     return (
-      <div className='login-and-signup'>
-        <div className='form-card'>
-          <h1>Regístrate</h1>
+      <div className="login-and-signup">
+        <div className="form-card">
+          <h1>
+            <FormattedMessage id="signup.hsignup" defaultMessage="Regístrate" />
+          </h1>
           <form onSubmit={this.handleSubmit}>
-            <label>Nombre:</label>
-            <input id='signup-name' type='text' name='name' placeholder='John/Jane' value={this.state.name}
-              onChange={this.checkName} />
-            <InputFeedback isOk={this.state.nameOk} feedback={this.state.nameFeedback} />
+            <label>
+              <FormattedMessage id="signup.nombre" defaultMessage="Nombre" />:
+            </label>
+            <input
+              id="signup-name"
+              type="text"
+              name="name"
+              placeholder="John/Jane"
+              value={this.state.name}
+              onChange={this.checkName}
+            />
+            <InputFeedback
+              isOk={this.state.nameOk}
+              feedback={this.state.nameFeedback}
+            />
 
-            <label>Apellido:</label>
-            <input id='signup-last-name' type='text' name='last-name' placeholder='Doe' value={this.state.lastName}
-              onChange={this.checkLastName} />
-            <InputFeedback isOk={this.state.lastNameOk} feedback={this.state.lastNameFeedback} />
+            <label>
+              <FormattedMessage
+                id="signup.lastname"
+                defaultMessage="Apellido"
+              />
+              :
+            </label>
+            <input
+              id="signup-last-name"
+              type="text"
+              name="last-name"
+              placeholder="Doe"
+              value={this.state.lastName}
+              onChange={this.checkLastName}
+            />
+            <InputFeedback
+              isOk={this.state.lastNameOk}
+              feedback={this.state.lastNameFeedback}
+            />
 
-            <label>Correo Uniandes:</label>
-            <input id='signup-email' type='text' name='email' placeholder='jdoe@uniandes.edu.co' value={this.state.email}
-              onChange={this.checkEmail} />
-            <InputFeedback isOk={this.state.emailOk} feedback={this.state.emailFeedback} />
+            <label>
+              <FormattedMessage
+                id="signup.mail"
+                defaultMessage="Correo Uniandes"
+              />{" "}
+              :
+            </label>
+            <input
+              id="signup-email"
+              type="text"
+              name="email"
+              placeholder="jdoe@uniandes.edu.co"
+              value={this.state.email}
+              onChange={this.checkEmail}
+            />
+            <InputFeedback
+              isOk={this.state.emailOk}
+              feedback={this.state.emailFeedback}
+            />
 
-            <div className='signup-password'>
-              <label>Clave:</label>
-              <input className='hide-unhide' type='button' onClick={this.handleHideUnhide} value={hideButtonText} />
+            <div className="signup-password">
+              <label>
+                <FormattedMessage id="signup.pswd" defaultMessage="Clave" />:
+              </label>
+              <input
+                className="hide-unhide"
+                type="button"
+                onClick={this.handleHideUnhide}
+                value={hideButtonText}
+              />
             </div>
-            <input id='signup-password' type={password} name='password' value={this.state.password}
-              onChange={this.checkPassword} />
-            <InputFeedback isOk={this.state.passwordOk} feedback={this.state.passwordFeedback} />
-
-            <input type='submit' value='Registrarme' />
+            <input
+              id="signup-password"
+              type={password}
+              name="password"
+              value={this.state.password}
+              onChange={this.checkPassword}
+            />
+            <InputFeedback
+              isOk={this.state.passwordOk}
+              feedback={this.state.passwordFeedback}
+            />
+            <FormattedMessage id="signup.signup" defaultMessage="Registrarme">
+              {val => <input type="submit" value={val} />}
+            </FormattedMessage>
           </form>
         </div>
       </div>
