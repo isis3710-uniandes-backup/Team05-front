@@ -1,0 +1,42 @@
+.record-new-content {
+  display: grid;
+  grid-template-columns: var(--page-grid-column);
+  height: 100%;
+}
+
+.record-new-wrapper {
+  grid-column: 2;
+}
+
+.record-new-wrapper form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto 50px;
+}
+
+.record-new-wrapper input[type="submit"] {
+  align-self: center;
+  background-image: linear-gradient(-180deg, var(--primary-light) 0%, var(--primary) 100%);
+  border: 1px solid var(--primary-dark);
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  height: 50px;
+  margin: 20px auto;
+  width: 200px;
+}
+
+.record-new-wrapper input[type="submit"]:hover {
+  background-image: linear-gradient(-180deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+.record-new-wrapper input[type="submit"]:active {
+  background-image: linear-gradient(-180deg, var(--primary-dark) 0%, var(--primary) 100%);
+}
+
+.record-new-wrapper input[type="submit"]:focus{
+  border: 1px solid var(--primary-dark);
+  outline: 0;
+}

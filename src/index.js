@@ -20,4 +20,4 @@ ReactDOM.render(
     </BrowserRouter>
   </IntlProvider>,
   document.getElementById('root')
-  );  
+);
