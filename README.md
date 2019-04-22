@@ -10,6 +10,8 @@ Al correr la herramienta de accesibilidad aXe se observan errores de contraste e
 
 Además, este proyecto esta corriendo en [HEROKU](https://secret-tor-17478.herokuapp.com) y está disponible en [bioandes.cpotdevin.com](http://bioandes.cpotdevin.com).
 
+El uso de esta página se puede ver en [YouTube](https://youtu.be/NaL9INgXuEs).
+
 Para poder correr el proyecto es necesario:
 
 ### 1. abrir una terminal

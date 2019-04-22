@@ -5,6 +5,7 @@
 - Dice que la barra de busqueda debería filtrar y sortear los especimenes mostrados y hacer más evidente los valores que tienen los especímenes en el parámetro por el cual se está filtrando.
 - Le gustaron los colores de la página y el estilo en general.
 - Se ve que los formularios se entienden con facilidad pues fue allí donde no se confundió ni necesitó hacer preguntas.
+- Un video de este test de usabilidad se puede ver en [Youtube](https://youtu.be/5n1QrnoIF6k).
 
 ## Segundo participante
 - Dice no entender los parametros para filtrar en la barra de busqueda.
