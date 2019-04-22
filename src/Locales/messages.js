@@ -6,6 +6,7 @@ export default {
     "nav.nosotros": "About us",
     "nav.sesion": "Log in",
     "nav.registrar": "Sign up",
+    "nav.add" : "Add specimen",
 
     "nosotros.hmision": "Mission",
     "nosotros.mision":
@@ -76,6 +77,7 @@ export default {
     "nav.nosotros": "Nosotros",
     "nav.sesion": "Inicia sesión",
     "nav.registrar": "Regístrate",
+    "nav.add" : "Añadir espécimen",
 
     "nosotros.hmision": "Misión",
     "nosotros.mision":
@@ -129,7 +131,7 @@ export default {
     "err.lost" : "Parece que te perdiste.",
     
     "conf.done" : "Listo!",
-    "conf.mail" : "Te hemos enviado un correo de confirmación, por favor revisalo para poder agregar especímenes.",
+    "conf.mail" : "Te hemos enviado un correo de confirmación, por favor revísalo para poder agregar especímenes.",
 
     "especimen.dominio" : "Dominio",
     "especimen.reino" : "Reino",
