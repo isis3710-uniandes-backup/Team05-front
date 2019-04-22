@@ -13,9 +13,9 @@ form.searchbar {
 
 .searchbar select {
   background-color: white;
-  border: none; 
+  border: none;
   color: var(--grey);
-  font-size: 20px;
+  font-size: 16px;
   margin-left: 15px;
   width: 120px;
 }
@@ -35,7 +35,7 @@ form.searchbar {
   border-color: lightgray;
   border-width: 0 0 2px 0;
   color: var(--grey);
-  font-size: 20px;
+  font-size: 16px;
   height: 34px;
   margin: 0 20px 0 0;
   padding-left: 0px;
@@ -52,7 +52,7 @@ form.searchbar {
   border-radius: 20px;
   color: white;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
   height: 40px;
   margin-right: 5px;
   padding: 0;

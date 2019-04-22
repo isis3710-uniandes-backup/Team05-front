@@ -20,9 +20,13 @@ class Especimen extends React.Component {
       return <Redirect push to={url} />;
     }
 
+    const imageStyle = {
+      backgroundImage: `url(${this.props.especimen.imagen})`
+    };
+
     return (
       <div className='card' onMouseDown={this.handleRedirect}>
-        <img src={this.props.especimen.imagen} alt={this.props.especimen.especie} />
+        <div style={imageStyle} />
         <h3><a href={url}>{this.props.especimen.especie}</a></h3>
       </div>
     );
