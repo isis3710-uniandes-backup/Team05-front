@@ -186,7 +186,7 @@ class RecordNew extends React.Component {
               label={<FormattedMessage id="especimen.especie" defaultMessage="Especie: " />} collection='especies'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
-            <div>
+            <div className='record-new-file-input'>
               <label htmlFor='record-new-image'><FormattedMessage id="especimen.imagen" defaultMessage="Imagen: " /></label>
               <input id='record-new-image' type='file' name='image' accept='.jpg,.jpeg,.png' value={this.state.image} onChange={this.handleImageFileChange} />
             </div>

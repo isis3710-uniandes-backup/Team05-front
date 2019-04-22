@@ -15,6 +15,14 @@
   margin: 0 auto 50px;
 }
 
+.record-new-file-input label {
+  font-size: 20px;
+}
+
+.record-new-file-input input {
+  margin-left: 26px;
+}
+
 .record-new-wrapper input[type="submit"] {
   align-self: center;
   background-image: linear-gradient(-180deg, var(--primary-light) 0%, var(--primary) 100%);
