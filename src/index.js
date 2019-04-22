@@ -12,8 +12,9 @@ import messages from './Locales/messages.js';
 addLocaleData(en);
 addLocaleData(es);
 
+const language = navigator.language.split('-')[0];
 ReactDOM.render(
-  <IntlProvider locale="en" messages={messages['es']}>
+  <IntlProvider locale={language} messages={messages[language]}>
     <BrowserRouter>
       <App />
     </BrowserRouter>

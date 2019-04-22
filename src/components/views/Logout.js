@@ -1,7 +1,8 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import base from '../../base';
-import Loading from '../content/Loading';
+import React from "react";
+import { Redirect } from "react-router-dom";
+import base from "../../base";
+import Loading from "../content/Loading";
+import { FormattedMessage } from "react-intl";
 
 class Logout extends React.Component {
   constructor() {
@@ -18,13 +19,15 @@ class Logout extends React.Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to='/' />
+      return <Redirect to="/" />;
     }
 
     return (
-      <div className='login-and-signup'>
-        <div className='form-card'>
-          <h1>Cerrando cesión</h1>
+      <div className="login-and-signup">
+        <div className="form-card">
+          <h1>
+            <FormattedMessage id="logout" defaultMessage="Cerrando sesión" />
+          </h1>
           <Loading />
         </div>
       </div>

@@ -68,7 +68,9 @@ export default {
     "especimen.clase" : "Class",
     "especimen.orden" : "Order",
     "especimen.familia" : "Family",
-    "especimen.genero" : "Genus"
+    "especimen.genero" : "Genus",
+
+    "logout" : "Logging out"
   },
   es: {
     "bioandes.hola": "Bienvenido a bioAndes",
@@ -139,7 +141,8 @@ export default {
     "especimen.clase" : "Clase",
     "especimen.orden" : "Orden",
     "especimen.familia" : "Familia",
-    "especimen.genero" : "Género"
-    
+    "especimen.genero" : "Género",
+
+    "logout" : "Cerrando sesión"
   }
 };
