@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import { FormattedMessage } from "react-intl";
 import moment from 'moment';
 import base from '../../base';
 import EspecimenTextInput from '../content/EspecimenTextInput';
@@ -47,7 +48,7 @@ class RecordNew extends React.Component {
         } else {
           this.setState({
             userIsVerified: false,
-            feedback: 'Para poder añadir un especimen debes validar tu correo Uniandes.'
+            feedback: <FormattedMessage id="especimen.validate.email" defaultMessage="Para poder añadir un especimen debes validar tu correo Uniandes." />
           });
         }
       }
@@ -119,12 +120,14 @@ class RecordNew extends React.Component {
         redirectUrl: `/especimen/${responseBody.id}`
       });
     } else {
-      this.setState({ feedback: 'Por favor llene correctamente los parámetros.' });
+      this.setState({
+        feedback: <FormattedMessage id="especimen.please.fill.all" defaultMessage="Por favor llene correctamente todos los parámetros." />
+      });
     }
   }
 
   isDataOk = () => {
-    return this.state.dominioReady && this.state.reinoReady && this.state.filoReady && this.state.claseReady
+    return this.state.userIsVerified && this.state.dominioReady && this.state.reinoReady && this.state.filoReady && this.state.claseReady
       && this.state.ordenReady && this.state.familiaReady && this.state.generoReady && this.state.especieReady;
   }
 
@@ -133,43 +136,62 @@ class RecordNew extends React.Component {
       return <Redirect push to={this.state.redirectUrl} />
     }
 
+    let addButton = null;
+    if (this.state.addingSpecimen) {
+      addButton = <Loading />;
+    } else {
+      addButton = (
+        <FormattedMessage id="especimen.add" defaultMessage="Añadir">
+          {val => <input type="submit" value={val} />}
+        </FormattedMessage>
+      );
+    }
     return (
       <div className='record-new-content'>
         <div className='record-new-wrapper'>
-          <h1>Agregar nuevo espécimen</h1>
+          <h1><FormattedMessage id="especimen.add.title" defaultMessage="Añadir nuevo espécimen" /></h1>
           <form onSubmit={this.handleSubmit}>
             <InputFeedback isOk={false} feedback={this.state.feedback} />
+            <InputFeedback isOk={false} feedback='' />
 
-            <EspecimenTextInput name='dominio' label='Dominio:' collection='dominios'
+            <EspecimenTextInput name='dominio'
+              label={<FormattedMessage id="especimen.dominio" defaultMessage="Dominio: " />} collection='dominios'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
-            <EspecimenTextInput name='reino' label='Reino:' collection='reinos'
+            <EspecimenTextInput name='reino'
+              label={<FormattedMessage id="especimen.reino" defaultMessage="Reino: " />} collection='reinos'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
-            <EspecimenTextInput name='filo' label='Filo:' collection='filos'
+            <EspecimenTextInput name='filo'
+              label={<FormattedMessage id="especimen.filo" defaultMessage="Filo: " />} collection='filos'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
-            <EspecimenTextInput name='clase' label='Clase:' collection='clases'
+            <EspecimenTextInput name='clase'
+              label={<FormattedMessage id="especimen.clase" defaultMessage="Clase: " />} collection='clases'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
-            <EspecimenTextInput name='orden' label='Orden:' collection='ordenes'
+            <EspecimenTextInput name='orden'
+              label={<FormattedMessage id="especimen.orden" defaultMessage="Orden: " />} collection='ordenes'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
-            <EspecimenTextInput name='familia' label='Familia:' collection='familias'
+            <EspecimenTextInput name='familia'
+              label={<FormattedMessage id="especimen.familia" defaultMessage="Familia: " />} collection='familias'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
-            <EspecimenTextInput name='genero' label='Género:' collection='generos'
+            <EspecimenTextInput name='genero'
+              label={<FormattedMessage id="especimen.genero" defaultMessage="Género: " />} collection='generos'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
-            <EspecimenTextInput name='especie' label='Especie:' collection='especies'
+            <EspecimenTextInput name='especie'
+              label={<FormattedMessage id="especimen.especie" defaultMessage="Especie: " />} collection='especies'
               handleParameterChange={this.handleParameterChange} setInputStatus={this.setInputStatus} />
 
             <div>
-              <label>Imagen:</label>
+              <label><FormattedMessage id="especimen.imagen" defaultMessage="Imagen: " /></label>
               <input type='file' name='image' accept='.jpg,.jpeg,.png' value={this.state.image} onChange={this.handleImageFileChange} />
             </div>
 
-            {this.state.addingSpecimen ? <Loading /> : <input type='submit' value='Añadir' />}
+            {addButton}
           </form>
         </div>
       </div>

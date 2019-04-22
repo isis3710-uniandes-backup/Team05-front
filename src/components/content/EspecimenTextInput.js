@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import InputFeedback from './InputFeedback';
 import './EspecimenTextInput.css';
 
@@ -35,10 +36,14 @@ class EspecimenTextInput extends React.Component {
     let inputIsOk = false;
     let feedback = '';
     if (value === '') {
-      feedback = 'Por favor llene este parámetro';
+      feedback = (
+        <FormattedMessage id="especimen.please.fill" defaultMessage="Por favor llene este parámetro." />
+      );
       this.props.setInputStatus(this.props.name + 'Ready', false);
     } else if (this.state.datalist.indexOf(value) === -1) {
-      feedback = 'Asegurese de usar un valor disponible o añadirlo si es necesario.';
+      feedback = (
+        <FormattedMessage id="especimen.please.use" defaultMessage="Asegurese de usar un valor disponible o añadirlo si es necesario." />
+      );
       this.props.setInputStatus(this.props.name + 'Ready', false);
     } else {
       inputIsOk = true;
@@ -88,13 +93,19 @@ class EspecimenTextInput extends React.Component {
     let addButton;
     if (this.state.postingNewValue) {
       inputClass = 'part';
-      addButton = <input type='button' value={'Añadiendo...'} disabled />;
+      addButton = (
+        <FormattedMessage id="especimen.adding" defaultMessage="Añadiendo...">
+          {val => <input type="button" value={val} onClick={this.handleAddClick} />}
+        </FormattedMessage>
+      );
     } else if (this.state.inputText === '' || -1 < this.state.datalist.indexOf(this.state.inputText)) {
       addButton = <div className='hidden-button'></div>;
     } else {
       inputClass = 'part';
       addButton = (
-        <input type='button' value={`Añadir`} onClick={this.handleAddClick} />
+        <FormattedMessage id="especimen.add" defaultMessage="Añadir">
+          {val => <input type="button" value={val} onClick={this.handleAddClick} />}
+        </FormattedMessage>
       );
     }
 

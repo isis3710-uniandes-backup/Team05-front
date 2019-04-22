@@ -44,7 +44,7 @@ class Navbar extends React.Component {
           </li>
           <li className="navbar-item">
             <NavLink exact to="/logout">
-              Cerrar sesión
+              <FormattedMessage id="logout.navbar" defaultMessage="Cerrar sesión" />
             </NavLink>
           </li>
         </ul>

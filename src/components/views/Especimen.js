@@ -1,8 +1,7 @@
 import React from "react";
-import "../content/Loading";
-import "./Especimen.css";
-import Loading from "../content/Loading";
 import { FormattedMessage } from "react-intl";
+import Loading from "../content/Loading";
+import "./Especimen.css";
 
 export default class Especimen extends React.Component {
   constructor() {
@@ -33,38 +32,25 @@ export default class Especimen extends React.Component {
           <img src={this.state.especimen.imagen} alt={this.state.especie} />
           <ul className="especimen-info">
             <li>
-              <FormattedMessage
-                id="especimen.dominio"
-                defaultMessage="Dominio"
-              />
-              : {this.state.especimen.dominio}
+              <FormattedMessage id="especimen.dominio" defaultMessage="Dominio: " />{this.state.especimen.dominio}
             </li>
             <li>
-              <FormattedMessage id="especimen.reino" defaultMessage="Reino" />:{" "}
-              {this.state.especimen.reino}
+              <FormattedMessage id="especimen.reino" defaultMessage="Reino: " />{this.state.especimen.reino}
             </li>
             <li>
-              <FormattedMessage id="especimen.filo" defaultMessage="Filo" />:{" "}
-              {this.state.especimen.filo}
+              <FormattedMessage id="especimen.filo" defaultMessage="Filo: " />{this.state.especimen.filo}
             </li>
             <li>
-              <FormattedMessage id="especimen.clase" defaultMessage="Clase" /> :{" "}
-              {this.state.especimen.clase}
+              <FormattedMessage id="especimen.clase" defaultMessage="Clase: " />{this.state.especimen.clase}
             </li>
             <li>
-              <FormattedMessage id="especimen.orden" defaultMessage="Orden" /> :{" "}
-              {this.state.especimen.orden}
+              <FormattedMessage id="especimen.orden" defaultMessage="Orden: " />{this.state.especimen.orden}
             </li>
             <li>
-              <FormattedMessage
-                id="especimen.familia"
-                defaultMessage="Familia"
-              />{" "}
-              : {this.state.especimen.familia}
+              <FormattedMessage id="especimen.familia" defaultMessage="Familia: " />{this.state.especimen.familia}
             </li>
             <li>
-              <FormattedMessage id="especimen.genero" defaultMessage="Género" />{" "}
-              : {this.state.especimen.genero}
+              <FormattedMessage id="especimen.genero" defaultMessage="Género: " />{this.state.especimen.genero}
             </li>
           </ul>
         </div>
