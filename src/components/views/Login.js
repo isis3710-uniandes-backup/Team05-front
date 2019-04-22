@@ -97,20 +97,22 @@ class Login extends React.Component {
           </h1>
           <form onSubmit={this.handleSubmit}>
             <InputFeedback isOk={false} feedback={this.state.loginError} />
-            <label>
+            <label htmlFor="login-email-input">
               <FormattedMessage id="login.correo" defaultMessage="Correo" />:
             </label>
             <input
+              id="login-email-input"
               type="text"
               name="email"
               value={this.state.email}
               onChange={this.handleEmailChange}
             />
 
-            <label>
+            <label htmlFor="login-password-input">
               <FormattedMessage id="login.pswd" defaultMessage="Clave" />:
             </label>
             <input
+              id="login-password-input"
               type="password"
               name="password"
               value={this.state.password}

@@ -112,8 +112,9 @@ class EspecimenTextInput extends React.Component {
     return (
       <div className='record-new-input-slot'>
         <div className='record-new-input'>
-          <label>{this.props.label}</label>
-          <input className={inputClass} type='text' name={this.props.name} value={this.state.inputText} onChange={this.handleChange}
+          <label htmlFor={`record-new-${this.props.name}`}>{this.props.label}</label>
+          <input id={`record-new-${this.props.name}`} className={inputClass} type='text' name={this.props.name}
+            value={this.state.inputText} onChange={this.handleChange}
             list={`selection-options-${this.props.name}`} autoComplete='off' />
           {addButton}
         </div>

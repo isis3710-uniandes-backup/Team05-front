@@ -31,7 +31,12 @@ form.searchbar {
   min-width: 1px;
 }
 
+.searchbar label {
+  color: var(--grey);
+}
+
 .searchbar input {
+  background-color: white;
   border-color: lightgray;
   border-width: 0 0 2px 0;
   color: var(--grey);

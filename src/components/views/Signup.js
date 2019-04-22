@@ -225,7 +225,7 @@ class Signup extends React.Component {
             <FormattedMessage id="signup.hsignup" defaultMessage="Regístrate" />
           </h1>
           <form onSubmit={this.handleSubmit}>
-            <label>
+            <label htmlFor="signup-name">
               <FormattedMessage id="signup.nombre" defaultMessage="Nombre" />:
             </label>
             <input
@@ -241,7 +241,7 @@ class Signup extends React.Component {
               feedback={this.state.nameFeedback}
             />
 
-            <label>
+            <label htmlFor="signup-last-name">
               <FormattedMessage
                 id="signup.lastname"
                 defaultMessage="Apellido"
@@ -261,12 +261,11 @@ class Signup extends React.Component {
               feedback={this.state.lastNameFeedback}
             />
 
-            <label>
+            <label htmlFor="signup-email">
               <FormattedMessage
                 id="signup.mail"
                 defaultMessage="Correo Uniandes"
-              />{" "}
-              :
+              />:
             </label>
             <input
               id="signup-email"
@@ -282,7 +281,7 @@ class Signup extends React.Component {
             />
 
             <div className="signup-password">
-              <label>
+              <label htmlFor="signup-password">
                 <FormattedMessage id="signup.pswd" defaultMessage="Clave" />:
               </label>
               <input

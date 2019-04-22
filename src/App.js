@@ -10,12 +10,12 @@ export default class App extends React.Component {
         <div className='header'>
           <Navbar />
         </div>
-        <div className='content'>
+        <main className='content'>
           <Routes />
-        </div>
-        <div className='footer'>
+        </main>
+        <footer className='footer'>
           <p>Copyright © 2019 BioAndes</p>
-        </div>
+        </footer>
       </div>
     );
   }
