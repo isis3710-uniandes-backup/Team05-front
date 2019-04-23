@@ -32,3 +32,7 @@ npm install
 npm start
 ~~~
 #### P.D. para tener una conección al backend de no es necesario correr el backend puesto que este ya se encuentra corriendo en HEROKU. Este puede tardar unos segundos en responder por primera vez a las peticiones.
+
+
+Link al video:
+https://drive.google.com/drive/folders/1WXi3QTXLvnE0Gun0iPwhJDivyZvtkv69?usp=sharing
