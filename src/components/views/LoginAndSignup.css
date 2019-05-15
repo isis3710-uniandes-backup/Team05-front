@@ -1,6 +1,6 @@
 .login-and-signup {
   align-content: center;
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/jungle-background.jpg?alt=media&token=fc1f2e34-fd90-4a76-bc95-21eefa42518a');
+  background-image: url('/images/jungle-background.jpg');
   background-size: cover;
   height: 100%;
   display: grid;

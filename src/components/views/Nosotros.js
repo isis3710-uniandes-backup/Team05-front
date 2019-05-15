@@ -24,7 +24,7 @@ export default class Nosotros extends React.Component {
             </div>
             <div className='nosotros-img'>
               <img
-                src='http://delacarreracavanzo.com/wp-content/uploads/2018/04/IMAGENES_EXTERIORES_4-1024x598.jpg'
+                src='/images/mission.jpg'
                 alt='bloque M Universidad de los Andes'
               />
             </div>
@@ -53,7 +53,7 @@ export default class Nosotros extends React.Component {
             </div>
             <div className='nosotros-img'>
               <img
-                src='http://repository.humboldt.org.co/bitstream/handle/20.500.11761/102/7376.jpg?sequence=6&isAllowed=y'
+                src='/images/history.jpg'
                 alt='colección de huevos donada por Marinkelle'
               />
             </div>
@@ -77,7 +77,7 @@ export default class Nosotros extends React.Component {
             </div>
             <div className='nosotros-img'>
               <img
-              src='https://rachelivanyi.com/wp-content/uploads/2013/05/RIvanyi_Comp_animals-940x470.jpg'
+              src='/images/collections.jpg'
                 alt='especímenes de colecciones'
               />
             </div>

@@ -3,7 +3,7 @@
 }
 
 .bioandes-search {
-  background-image: url('https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/search-background.jpg?alt=media&token=1c5296f0-1b0d-4371-b843-f8f2cb85267b');
+  background-image: url('/images/search-background.jpg');
   background-size: cover;
   height: fit-content;
   grid-column: 1 / -1;
