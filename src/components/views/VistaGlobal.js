@@ -7,6 +7,7 @@ class VistaGlobal extends Component {
   render() {
     return (
       <div className="sun">
+        <p>La vista global permite observar fácilmente las categorías a las que pertenecen los especímenes en un mismo lugar. Simplemente pase el cursor sobre las secciones o haga clic sobre ellas para una vista más detallada.</p>
         <Sunburst
           data={data}
           onSelect={this.onSelect}
