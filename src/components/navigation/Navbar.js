@@ -38,6 +38,11 @@ class Navbar extends React.Component {
             </NavLink>
           </li>
           <li className="navbar-item">
+            <NavLink exact to="/vistaGlobal">
+              <FormattedMessage id="nav.global" defaultMessage="Vista global" />
+            </NavLink>
+          </li>
+          <li className="navbar-item">
             <NavLink exact to="/nosotros">
               <FormattedMessage id="nav.nosotros" defaultMessage="Nosotros" />
             </NavLink>
@@ -55,6 +60,11 @@ class Navbar extends React.Component {
           <li className="navbar-item">
             <NavLink exact to="/">
               <FormattedMessage id="nav.inicio" defaultMessage="Inicio" />
+            </NavLink>
+          </li>
+          <li className="navbar-item">
+            <NavLink exact to="/vistaGlobal">
+              <FormattedMessage id="nav.global" defaultMessage="Vista global" />
             </NavLink>
           </li>
           <li className="navbar-item">

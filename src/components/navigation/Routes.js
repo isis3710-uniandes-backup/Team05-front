@@ -11,6 +11,7 @@ import Signup from '../views/Signup';
 import SignupConfirmation from '../views/SignupConfirmation';
 import Logout from '../views/Logout';
 import NotFound from '../views/NotFound';
+import VistaGlobal from '../views/VistaGlobal';
 
 export default class Routes extends React.Component {
   render() {
@@ -22,6 +23,7 @@ export default class Routes extends React.Component {
         <Route exact path='/especimen/record-new' component={RecordNew} />
         <Route exact path='/especimen/:id' component={Especimen} />
         <Route exact path='/nosotros' component={Nosotros} />
+        <Route exact path='/vistaGlobal' component={VistaGlobal} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/signup-confirmation' component={SignupConfirmation} />

@@ -7,6 +7,7 @@ export default {
     "nav.sesion": "Log in",
     "nav.registrar": "Sign up",
     "nav.add": "Add specimen",
+    "nav.global" : "Global view",
 
     "nosotros.hmision": "Mission",
     "nosotros.mision":
@@ -90,6 +91,7 @@ export default {
     "nav.sesion": "Inicia sesión",
     "nav.registrar": "Regístrate",
     "nav.add": "Añadir espécimen",
+    "nav.global" : "Vista global",
 
     "nosotros.hmision": "Misión",
     "nosotros.mision":
