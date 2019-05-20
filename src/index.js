@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import {IntlProvider} from 'react-intl';
-import {addLocaleData} from 'react-intl';
+import { IntlProvider } from 'react-intl';
+import { addLocaleData } from 'react-intl';
 import en from "react-intl/locale-data/en";
 import es from "react-intl/locale-data/es";
 import './index.css';
