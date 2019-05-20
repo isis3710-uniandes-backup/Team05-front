@@ -8,7 +8,6 @@ import es from "react-intl/locale-data/es";
 import './index.css';
 import App from './App';
 import messages from './Locales/messages.js';
-import * as serviceWorker from './serviceWorker';
 
 addLocaleData(en);
 addLocaleData(es);
@@ -22,5 +21,3 @@ ReactDOM.render(
   </IntlProvider>,
   document.getElementById('root')
 );
-
-serviceWorker.register();

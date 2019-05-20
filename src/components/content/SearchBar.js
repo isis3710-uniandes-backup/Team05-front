@@ -53,7 +53,7 @@ class SearchBar extends React.Component {
 
     return (
       <form className="searchbar" onSubmit={this.handleSubmit}>
-        <label htmlFor="select-search">˓</label>
+        <label htmlFor="select-search"></label>
         <select id="select-search" name="key" title="Select parameter" onChange={this.handleSelectChange}>
           <FormattedMessage id="search.dominio" defaultMessage="Dominio">
             {message => <option value="dominio">{message}</option>}
@@ -83,7 +83,7 @@ class SearchBar extends React.Component {
 
         <div className="searchbar-separator" />
 
-        <label htmlFor="search-input">˓</label>
+        <label htmlFor="search-input"></label>
         <input id="search-input" type="search" name="value" list="search-options" autoComplete="off" />
 
         <datalist id="search-options">{datalist}</datalist>
