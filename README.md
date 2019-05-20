@@ -1,5 +1,7 @@
 # Team05-front
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/11bb36d4-99d3-4086-996f-2ac6c978bbcc/deploy-status)](https://app.netlify.com/sites/sharp-kare-6fe0e6/deploys)
+
 Este repositorio contiene el frontend del proyecto de visualización de datos del museo de Historia Natural de la Universidad de los Andes.
 
 En la carpeta `ui` se pueden encontrar tanto los mockups como los resultados del ejercicio de card sorting del proyecto.
@@ -8,7 +10,7 @@ Mediante el uso de este frontend desarrollado en React un usuario tiene la posib
 
 Al correr la herramienta de accesibilidad aXe se observan errores de contraste entre texto y fondo, sin embargo esto se deba a utilizar gradientes e imagenes. En cada caso en particular se evaluó que ni las gradientes li la imagen causaban problemas visuales dado el alto contraste entre texto y fondo.
 
-Además, este proyecto esta corriendo en [HEROKU](https://secret-tor-17478.herokuapp.com) y está disponible en [bioandes.cpotdevin.com](http://bioandes.cpotdevin.com).
+Además, este proyecto esta corriendo en los servidores de Netlify y está disponible en [bioandes.cpotdevin.com](https://bioandes.cpotdevin.com).
 
 El uso de esta página se puede ver en [YouTube](https://youtu.be/NaL9INgXuEs).
 
