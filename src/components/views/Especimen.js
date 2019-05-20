@@ -15,7 +15,7 @@ export default class Especimen extends React.Component {
   async componentDidMount() {
     const id = this.props.match.params.id;
     const request = await fetch(
-      `https://boiling-brushlands-27343.herokuapp.com/api/especimen/${id}`
+      `http://api.bioandes.cpotdevin.com/api/especimen/${id}`
     );
     const especimen = await request.json();
     this.setState({

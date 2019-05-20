@@ -14,7 +14,7 @@ export default class Clase extends React.Component {
 
   async componentDidMount() {
     const clase = qs.parse(this.props.location.search).clase;
-    const request = await fetch(`https://boiling-brushlands-27343.herokuapp.com/api/especimenes?clase=${clase}`);
+    const request = await fetch(`http://api.bioandes.cpotdevin.com/api/especimenes?clase=${clase}`);
     const especimenes = await request.json();
     this.setState({
       clase: clase,
