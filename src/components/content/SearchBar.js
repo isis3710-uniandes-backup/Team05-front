@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
 
   componentDidMount = async () => {
     const response = await fetch(
-      "http://api.bioandes.cpotdevin.com/api/dominios"
+      "https://boiling-brushlands-27343.herokuapp.com/api/dominios"
     );
     const options = await response.json();
 
@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
       event.target.value === "orden" ? "ordenes" : event.target.value + "s";
 
     const response = await fetch(
-      `http://api.bioandes.cpotdevin.com/api/${parameter}`
+      `https://boiling-brushlands-27343.herokuapp.com/api/${parameter}`
     );
     const options = await response.json();
 

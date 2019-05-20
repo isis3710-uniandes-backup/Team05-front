@@ -17,7 +17,7 @@ class Home extends React.Component {
 
   componentDidMount = async () => {
     const response = await fetch(
-      "http://api.bioandes.cpotdevin.com/api/especimenes"
+      "https://boiling-brushlands-27343.herokuapp.com/api/especimenes"
     );
     const especimenes = await response.json();
 
