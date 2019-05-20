@@ -65,7 +65,7 @@ class EspecimenTextInput extends React.Component {
     });
 
     const value = this.state.inputText;
-    const response = await fetch(`http://api.bioandes.cpotdevin.com/api/${this.props.collection}`, {
+    const response = await fetch(`https://boiling-brushlands-27343.herokuapp.com/api/${this.props.collection}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
