@@ -17,6 +17,7 @@ export default class Especimen extends React.Component {
     const request = await fetch(
       `https://boiling-brushlands-27343.herokuapp.com/api/especimen/${id}`
     );
+    console.log(request);
     const especimen = await request.json();
     this.setState({
       especie: especimen.especie,

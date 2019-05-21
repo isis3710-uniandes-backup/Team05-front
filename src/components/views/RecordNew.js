@@ -95,11 +95,25 @@ class RecordNew extends React.Component {
         downloadUrl = 'https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/not_available.jpg?alt=media&token=6ecaf067-7490-4943-ba24-68c15b6f45ae';
       }
 
+      const responseToken = await fetch(`${getBackUrl()}/api/token`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      });
+
+      const responseBodyToken = await responseToken.json();
+      this.setState({
+        token: responseBodyToken.token
+      });
+
       const response = await fetch(`${getBackUrl()}/api/especimenes`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': this.state.token
         },
         body: JSON.stringify({
           dominio: this.state.dominio,
@@ -115,10 +129,10 @@ class RecordNew extends React.Component {
       });
 
       const responseBody = await response.json();
-
+      console.log(responseBody.message);
       this.setState({
         redirect: true,
-        redirectUrl: `/especimen/${responseBody.id}`
+        redirectUrl: `/`
       });
     } else {
       this.setState({
