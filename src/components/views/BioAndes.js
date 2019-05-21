@@ -33,7 +33,7 @@ class Home extends React.Component {
 
     const query = value !== "" ? `?${key}=${value}` : "";
     const response = await fetch(
-      "http://api.bioandes.cpotdevin.com/api/especimenes" + query
+      "https://boiling-brushlands-27343.herokuapp.com/api/especimenes" + query
     );
     const especimenes = await response.json();
 
