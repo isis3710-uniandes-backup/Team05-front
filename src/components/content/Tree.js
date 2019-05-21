@@ -2,7 +2,6 @@ import * as d3 from 'd3';
 
 class Tree {
   constructor(divId, data) {
-    console.log('new tree!');
     const width = 1600;
     const radius = width / 2;
 
