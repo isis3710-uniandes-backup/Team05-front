@@ -22,7 +22,7 @@ const especimenesCacheConfig = {
   cacheName: 'especimenes-data'
 };
 
-workbox.routing.registerRoute(/.*especimenes.*/, workbox.strategies.cacheFirst(especimenesCacheConfig), 'GET');
+workbox.routing.registerRoute(/.*especimen.*/, workbox.strategies.cacheFirst(especimenesCacheConfig), 'GET');
 
 const especimenesImagesCacheConfig = {
   cacheName: 'especimenes-images'
