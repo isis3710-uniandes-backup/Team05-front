@@ -6,6 +6,7 @@ import base from '../../base';
 import EspecimenTextInput from '../content/EspecimenTextInput';
 import InputFeedback from '../content/InputFeedback';
 import Loading from '../content/Loading';
+import { getBackUrl } from '../api/BackInfo';
 import './RecordNew.css';
 
 class RecordNew extends React.Component {
@@ -94,7 +95,7 @@ class RecordNew extends React.Component {
         downloadUrl = 'https://firebasestorage.googleapis.com/v0/b/bioandes-2019.appspot.com/o/not_available.jpg?alt=media&token=6ecaf067-7490-4943-ba24-68c15b6f45ae';
       }
 
-      const response = await fetch('https://boiling-brushlands-27343.herokuapp.com/api/especimenes', {
+      const response = await fetch(`${getBackUrl()}/api/especimenes`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

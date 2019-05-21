@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import InputFeedback from './InputFeedback';
+import { getBackUrl } from '../api/BackInfo';
 import './EspecimenTextInput.css';
 
 class EspecimenTextInput extends React.Component {
@@ -65,7 +66,7 @@ class EspecimenTextInput extends React.Component {
     });
 
     const value = this.state.inputText;
-    const response = await fetch(`https://boiling-brushlands-27343.herokuapp.com/api/${this.props.collection}`, {
+    const response = await fetch(`${getBackUrl()}/api/${this.props.collection}`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
