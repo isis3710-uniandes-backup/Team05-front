@@ -28,4 +28,4 @@ const especimenesImagesCacheConfig = {
   cacheName: 'especimenes-images'
 };
 
-workbox.routing.registerRoute(/.*.(?:png|jpg|jpeg|svg)$/, workbox.strategies.cacheFirst(especimenesImagesCacheConfig), 'GET');
+workbox.routing.registerRoute(/.*.(?:png|jpg|jpeg|svg).*/, workbox.strategies.cacheFirst(especimenesImagesCacheConfig), 'GET');
