@@ -1,9 +1,16 @@
-.sun {
+.vista-global {
   text-align: center;
-  margin: 5%;
+  margin: 0;
 }
 
-.sunburstTooltip p {
-    margin: 2% 10vw;
+.vista-global p {
+  max-width: 900px;
+  margin: 20px auto;
 }
 
+#tree {
+  height: 1300px;
+  margin: 20px auto 50px;
+  text-align: center;
+  width: 1300px;
+}
